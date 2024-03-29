@@ -1,9 +1,12 @@
 
-        import 'package:auth/User/Home/Searchbar.dart';
+        import 'package:auth/User/Categories/categories.dart';
+import 'package:auth/User/Home/Searchbar.dart';
         import 'package:auth/User/Home/popularCategories.dart';
         import 'package:auth/User/Home/popularProduct.dart';
         import 'package:auth/User/Home/slider.dart';
+import 'package:auth/User/Services/services.dart';
         import 'package:auth/User/cart/CartScreen.dart';
+import 'package:flutter/foundation.dart';
         import 'package:flutter/material.dart';
         class HomeScreen extends StatelessWidget {
         const HomeScreen({super.key});
@@ -28,7 +31,7 @@
         children: [
 
         const   SizedBox(height: 10,),
-        HomeSlider(),
+      //  HomeSlider(),
         const   SizedBox(height: 20,),
         const  HomeSearchBar(),
         const   SizedBox(height: 10,),
@@ -40,12 +43,24 @@
         const    SizedBox(height: 50,),
           Row(children: 
         [
-        Container(color: Colors.amber,height: 150,width: 180),
-        Container(color: Colors.black26,height:150,width: 180)],),
+        InkWell(onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProductCategories() ));
+    
+        },
+          child: Container(color: Colors.white,height: 150,width: 180,child: Center(child: Text("Products"),),)),
+        InkWell(
+          onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const ServiesScreen() ));
+    
+          },
+          child: Container(color: Colors.white,height:150,width: 180,child: Center(child: Text("Services"),)))],),
+        SizedBox(height: 20,),
         const   Align(alignment: Alignment.topLeft,
           child: Text("Popular Product",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)),
-        const  SizedBox(height: 30,),
-        const  PopluarProducts()
+        const  SizedBox(height: 20,),
+        Container(padding: EdgeInsets.all(10),
+          color: Colors.white,
+          child: const  PopluarProducts(),)
 
         ],),
         ),

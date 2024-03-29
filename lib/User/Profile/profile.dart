@@ -1,5 +1,6 @@
 import 'package:auth/User/Profile/editProfile.dart';
 import 'package:auth/User/cart/CartScreen.dart';
+import 'package:auth/test.dart';
 import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -45,8 +46,13 @@ class ProfileScreen extends StatelessWidget {
       
      ),
    
-     ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product"),
-     ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Services"),
+     InkWell(
+      onTap: (){
+           Navigator.push(context, MaterialPageRoute(builder: (context)=>const Test () ));
+      
+      },
+      child: ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product")),
+     //ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Services"),
      InkWell(onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context)=>const  CartScreen()));
      },

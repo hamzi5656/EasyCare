@@ -15,7 +15,7 @@ class _HomeNavigatorState extends State<HomeNavigator> {
   List<IconData> navigationIcons = [
    Icons.home,
    Icons.category_outlined,
-   Icons.favorite,
+   Icons.favorite_outline,
    Icons.person,
   ];
   List<String> iconName = ["home", "store", " Favourite", "profile"];
@@ -76,7 +76,7 @@ class _HomeNavigatorState extends State<HomeNavigator> {
                             color: i == currentIndex
                                 ? Colors.blueAccent
                                 : Colors.black54,
-                            size: i == currentIndex ? 25 : 20,
+                            size: i == currentIndex ? 30 : 25,
                           ),
                         ),
                       ),

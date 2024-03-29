@@ -49,8 +49,8 @@ class ProductDetail extends StatelessWidget {
               
             ]
 ),
-SizedBox(height: 10,),
-         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        const SizedBox(height: 10,),
+      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Status:",style: TextStyle(fontSize: 16,),),
               Text("In Stock",style: TextStyle(fontSize: 16,)),
@@ -71,7 +71,10 @@ Card(
     ],),
   ),)
   ],))
-    ],),
+   
+    ]
+    ,),
+
     bottomSheet: Container(color: Colors.deepPurple,
       height: 80,child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
