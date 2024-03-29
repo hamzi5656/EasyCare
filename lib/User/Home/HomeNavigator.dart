@@ -1,5 +1,5 @@
-import "package:auth/Home/homeScreen.dart";
 import 'package:auth/User/Categories/categories.dart';
+import 'package:auth/User/Home/HomeScreen.dart';
 import 'package:auth/User/Profile/profile.dart';
 import "package:auth/test.dart";
 import "package:flutter/material.dart";
@@ -29,19 +29,17 @@ class _HomeNavigatorState extends State<HomeNavigator> {
       body: 
       IndexedStack(
         index: currentIndex,
-        children:  [
-        HomeScreen(),
-      ProductCategories(),
+        children:const  [
+         HomeScreen(),
+         ProductCategories(),
          Test(),
-        ProfileScreen(),
+         ProfileScreen(),
 
           ],
       ),
       bottomNavigationBar: Container(
         height: 82,
         margin: const EdgeInsets.all(0
-            // left: 12, right: 12,
-            //  bottom: 24
             ),
         padding: const EdgeInsets.all(0),
         decoration: const BoxDecoration(

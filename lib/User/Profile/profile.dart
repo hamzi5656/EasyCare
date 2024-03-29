@@ -1,3 +1,4 @@
+import 'package:auth/User/Profile/editProfile.dart';
 import 'package:auth/User/cart/CartScreen.dart';
 import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
@@ -6,15 +7,36 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   appBar: AppBar(title: Text("Profile",style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),
+   appBar: AppBar(title:const  Text("Profile",style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),
       body: Column(children: [
-        SizedBox(height: 10,),
+      const   SizedBox(height: 10,),
      Padding(
        padding: const EdgeInsets.only(),
        child: Container(height: 45,width: double.infinity,color: Colors.deepPurple.withOpacity(.1),
-        child: Align(alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10),
+        child: const Align(alignment: Alignment.centerLeft,
+          child: Padding( 
+            padding:  EdgeInsets.only(left: 10),
+            child: Text("Profile",style: TextStyle(fontWeight:FontWeight.bold,
+            color: Colors.deepPurple,
+            ),),
+          ),
+        ),),
+      
+     ),
+     const   SizedBox(height: 10,),
+     InkWell(onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfile() ));
+     },
+      child: ProfileRow(myicon: Icons.mode_edit_outlined, profileText: "Edit Profile")),
+ 
+   const   SizedBox(height: 10,),
+   
+     Padding(
+       padding: const EdgeInsets.only(),
+       child: Container(height: 45,width: double.infinity,color: Colors.deepPurple.withOpacity(.1),
+        child: const Align(alignment: Alignment.centerLeft,
+          child: Padding( 
+            padding:  EdgeInsets.only(left: 10),
             child: Text("GENERAL",style: TextStyle(fontWeight:FontWeight.bold,
             color: Colors.deepPurple,
             ),),
@@ -22,19 +44,20 @@ class ProfileScreen extends StatelessWidget {
         ),),
       
      ),
+   
      ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product"),
      ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Services"),
      InkWell(onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const  CartScreen()));
      },
       child: ProfileRow(myicon: Icons.shopping_bag_outlined, profileText: "My Cart")),
-      SizedBox(height: 10,),
+      const SizedBox(height: 10,),
      Padding(
        padding: const EdgeInsets.only(),
        child: Container(height: 45,width: double.infinity,color: Colors.deepPurple.withOpacity(.1),
-        child: Align(alignment: Alignment.centerLeft,
+        child:const Align(alignment: Alignment.centerLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 10),
+            padding:  EdgeInsets.only(left: 10),
             child: Text("About App",style: TextStyle(fontWeight:FontWeight.bold,
             color: Colors.deepPurple,
             ),),
@@ -59,8 +82,8 @@ class ProfileRow extends StatelessWidget {
       padding: const EdgeInsets.all(10.10),
       child: Row(children: [
         Icon(myicon,color: Colors.black54,),
-        SizedBox(width: 15,),
-        Text(profileText,style: TextStyle(fontWeight: FontWeight.bold),)
+       const  SizedBox(width: 15,),
+        Text(profileText,style: const TextStyle(fontWeight: FontWeight.bold),)
       ],),
     );
   }

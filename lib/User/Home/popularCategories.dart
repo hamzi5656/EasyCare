@@ -12,18 +12,18 @@ class PopularCategories extends StatelessWidget {
         crossAxisAlignment:  CrossAxisAlignment.start,
           children: [
            
-            SizedBox(height: 15,),
+          const   SizedBox(height: 15,),
             Row(children: [
               CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Dumb"),
-              SizedBox(width: 10,),
+             const SizedBox(width: 10,),
               CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Blind"),
-                  SizedBox(width: 10,),
+                const  SizedBox(width: 10,),
               CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Deaf"),
-                  SizedBox(width: 10,),
+               const   SizedBox(width: 10,),
               CategoriesWidget(Catimage: "asset/images/wheelchair3.jpg", categoriesText: "Fitness"),
-               SizedBox(width: 10,),
+             const  SizedBox(width: 10,),
                 CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Medical"),
-                  SizedBox(width: 10,),
+               const   SizedBox(width: 10,),
            
             ],)
             

@@ -5,7 +5,7 @@ class PopluarProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       child: Column(children: [
       Product(productImage: "asset/images/wheelchair.jpg", productName: "Wheelchair", desc: "Handyman", price: 12344,prodDuration: "Duration:()",),
     ],),);
