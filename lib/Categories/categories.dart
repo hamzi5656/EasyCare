@@ -12,8 +12,54 @@ class ProductCategories extends StatelessWidget {
 body: Padding(
   padding: const EdgeInsets.all(10.10),
   child: Column(children: [
-      CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Fitness"),
-                 
+     
+     Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: 
+       Row(children: [ 
+        CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Fitness"),
+       SizedBox(width: 30,),
+       
+        CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Fitness"),
+        SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+           SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+        
+         ],),
+     ),
+     SizedBox(height: 20,),
+         Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: 
+       Row(children: [ 
+        CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Fitness"),
+       SizedBox(width: 30,),
+       
+        CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Fitness"),
+        SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+           SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+        
+         ],),
+     ) ,
+     SizedBox(height: 20,),
+         Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: 
+       Row(children: [ 
+        CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Fitness"),
+       SizedBox(width: 30,),
+       
+        CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Fitness"),
+        SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+           SizedBox(width: 30,),
+         CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Fitness"),
+        
+         ],),
+     )                                
   ],),
 ),
     );

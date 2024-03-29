@@ -44,6 +44,7 @@ class Login extends StatelessWidget {
                       fontFamily: "poppins"),
                 ),
               ),
+
               Text(
                 "Login to continue",
                 style: TextStyle(
@@ -54,30 +55,35 @@ class Login extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Email",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              SizedBox(height: 40,),
+              Flexible(
+                child: TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Email",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                controller: passwordController,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Password",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              Flexible(
+                child: TextField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Password",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -102,9 +108,9 @@ class Login extends StatelessWidget {
                 onPressed: () {
                   loginHandler();
                 },
-                child: Text("Login"),
+                child: Text("Login",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // Background color
+                    primary: Colors.deepPurple, // Background color
                     onPrimary: Colors.white, // Text color
                     elevation: 5,
                     minimumSize: Size(

@@ -1,4 +1,5 @@
 import 'package:auth/Home/Appbar.dart';
+import 'package:auth/cart/CartScreen.dart';
 import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -24,7 +25,10 @@ class ProfileScreen extends StatelessWidget {
      ),
      ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product"),
      ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Services"),
-     ProfileRow(myicon: Icons.shopping_bag_outlined, profileText: "My Cart"),
+     InkWell(onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
+     },
+      child: ProfileRow(myicon: Icons.shopping_bag_outlined, profileText: "My Cart")),
       SizedBox(height: 10,),
      Padding(
        padding: const EdgeInsets.only(),
@@ -37,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
             ),),
           ),
         ),),),
-             ProfileRow(myicon: Icons.warning, profileText: "About App"),
+     ProfileRow(myicon: Icons.warning, profileText: "About App"),
      ProfileRow(myicon: Icons.privacy_tip_outlined, profileText: "Privacy Polices"),
      ProfileRow(myicon: Icons.phone, profileText: "Contact Us"),
      ProfileRow(myicon: Icons.logout, profileText: "Logout"),

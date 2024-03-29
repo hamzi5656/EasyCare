@@ -65,57 +65,65 @@ Signupmethod() async {
               SizedBox(
                 height: 80,
               ),
-              TextField(
-                controller:_emailController,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Email",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              Flexible(
+                child: TextField(
+                  controller:_emailController,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Email",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                controller: _nameController,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Full Name",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              Flexible(
+                child: TextField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Full Name",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                controller: _passwordController,
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Password",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              Flexible(
+                child: TextField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Password",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextField(
-                decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    hintText: "Confirm Password",
-                    hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.grey)),
+              Flexible(
+                child: TextField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Confirm Password",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
               ),
               SizedBox(
                 height: 50,

@@ -1,3 +1,4 @@
+import 'package:auth/Product/productDetail.dart';
 import 'package:flutter/material.dart';
 class PopluarProducts extends StatelessWidget {
   const PopluarProducts({super.key});
@@ -19,14 +20,19 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
-      child: Container(height: 230,width: 160,decoration: BoxDecoration(color: Colors.grey.withOpacity(.1),borderRadius: BorderRadius.circular(10)),
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductDetail()));
+      },
+      child: Card(
+        //height: 230,width: 160,decoration: BoxDecoration(color: Colors.grey.withOpacity(.1),borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [       
-          Image(image: AssetImage("asset/images/wheelchair.jpg")),
+          Image(height: 120,width: 120,
+            image: AssetImage(
+            "asset/images/wheelchairred.jpg")),
           SizedBox(height: 10,),
           Text(productName,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
           Text(prodDuration),
