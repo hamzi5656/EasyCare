@@ -1,7 +1,6 @@
-import 'package:auth/Authentication/userlogin.dart';
-import 'package:auth/Home/HomeNavigator.dart';
+import 'package:auth/User/Authentication/userlogin.dart';
 import 'package:auth/Home/homeScreen.dart';
-import 'package:auth/Home/slider.dart';
+import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/firebase_options.dart';
 import 'package:auth/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,8 +25,9 @@ class MainApp extends StatelessWidget {
 
  return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
-      //HomeNavigator(),
+      home:
+      // Login(),
+    HomeNavigator(),
     );
   }
 }

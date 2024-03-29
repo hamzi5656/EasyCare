@@ -1,4 +1,4 @@
-import 'package:auth/Home/popularCategories.dart';
+import 'package:auth/User/Home/popularCategories.dart';
 import 'package:flutter/material.dart';
 class ProductCategories extends StatelessWidget {
   const ProductCategories({super.key});

@@ -1,7 +1,6 @@
-import "package:auth/Categories/categories.dart";
-import "package:auth/Home/HomeScreen.dart";
-import "package:auth/Home/slider.dart";
-import "package:auth/Profile/profile.dart";
+import "package:auth/Home/homeScreen.dart";
+import 'package:auth/User/Categories/categories.dart';
+import 'package:auth/User/Profile/profile.dart';
 import "package:auth/test.dart";
 import "package:flutter/material.dart";
 

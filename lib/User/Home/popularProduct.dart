@@ -1,4 +1,4 @@
-import 'package:auth/Product/productDetail.dart';
+import 'package:auth/User/Product/productDetail.dart';
 import 'package:flutter/material.dart';
 class PopluarProducts extends StatelessWidget {
   const PopluarProducts({super.key});

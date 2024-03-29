@@ -1,10 +1,8 @@
-import 'package:auth/Home/Appbar.dart';
-import 'package:auth/Home/HomeNavigator.dart';
-import 'package:auth/Home/Searchbar.dart';
-import 'package:auth/Home/popularCategories.dart';
-import 'package:auth/Home/popularProduct.dart';
-import 'package:auth/Home/slider.dart';
-import 'package:auth/cart/CartScreen.dart';
+import 'package:auth/User/Home/Searchbar.dart';
+import 'package:auth/User/Home/popularCategories.dart';
+import 'package:auth/User/Home/popularProduct.dart';
+import 'package:auth/User/Home/slider.dart';
+import 'package:auth/User/cart/CartScreen.dart';
 import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

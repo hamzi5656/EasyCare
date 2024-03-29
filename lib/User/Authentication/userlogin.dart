@@ -1,5 +1,5 @@
-import 'package:auth/Authentication/userSignup.dart';
-import 'package:auth/Home/HomeNavigator.dart';
+import 'package:auth/User/Authentication/userSignup.dart';
+import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

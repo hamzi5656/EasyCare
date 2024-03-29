@@ -1,5 +1,4 @@
-import 'package:auth/Home/Appbar.dart';
-import 'package:auth/cart/CartScreen.dart';
+import 'package:auth/User/cart/CartScreen.dart';
 import 'package:flutter/material.dart';
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
