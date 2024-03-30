@@ -35,19 +35,19 @@ class ProductCategories extends StatelessWidget {
  Navigator.push(context, MaterialPageRoute(builder: (context)=>const HearingAids() ));
       
       },
-          child: CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Hearing")),
+          child: CategoriesWidget(Catimage: "asset/images/hearing.jpg", categoriesText: "Hearing")),
        SizedBox(width: 30,),
         InkWell(onTap: (){
            Navigator.push(context, MaterialPageRoute(builder: (context)=>const VisualAids() ));
     
         },
-          child: CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "visual")),
+          child: CategoriesWidget(Catimage: "asset/images/visusal.png", categoriesText: "visual")),
         SizedBox(width: 30,),
         InkWell(onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const Sticks() ));
     
         },
-          child: CategoriesWidget(Catimage: "asset/images/wheelchair3.jpg", categoriesText: "Sticks")),
+          child: CategoriesWidget(Catimage: "asset/images/stick.jpg", categoriesText: "Sticks")),
        
          ],),
      ),
@@ -60,14 +60,14 @@ class ProductCategories extends StatelessWidget {
            Navigator.push(context, MaterialPageRoute(builder: (context)=>const Fitness() ));
     
         },
-          child: CategoriesWidget(Catimage: "asset/images/physiotherapist.jpg", categoriesText: "Fitness")),
+          child: CategoriesWidget(Catimage: "asset/images/fitness.jpg", categoriesText: "Fitness")),
        SizedBox(width: 30,),
        
       InkWell(onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>const Medical() ));
     
       },
-          child: CategoriesWidget(Catimage: "asset/images/admin.png", categoriesText: "Medical")),
+          child: CategoriesWidget(Catimage: "asset/images/medical.jpg", categoriesText: "Medical")),
        SizedBox(width: 30,),
         InkWell(onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const GymProducts() ));

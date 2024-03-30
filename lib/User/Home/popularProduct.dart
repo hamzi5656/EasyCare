@@ -23,7 +23,9 @@ class Product extends StatelessWidget {
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductDetail()));
       },
-      child: Card(
+      child: Container(
+        
+        decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
         //height: 230,width: 160,decoration: BoxDecoration(color: Colors.grey.withOpacity(.1),borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsets.all(10.0),

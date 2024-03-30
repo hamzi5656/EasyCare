@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomeSlider extends StatelessWidget {
   HomeSlider({super.key});
 final List<String> images = [
-    'https://www.abilities.com/images/products-for-disabilities.jpg',
+
     'https://d3i71xaburhd42.cloudfront.net/0203de1892205aaccc3c638c9d496beee1f8c151/5-Figure4-1.png',
     'https://www.consilium.europa.eu/media/67980/thumb.png',
     'https://centaur-wp.s3.eu-central-1.amazonaws.com/designweek/prod/content/uploads/2019/03/18111417/thisables-edit.jpg',
@@ -21,6 +21,7 @@ final List<String> images = [
             enableInfiniteScroll: true,
             reverse: false,
             autoPlay: true,
+            
             autoPlayInterval: Duration(seconds: 3),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
