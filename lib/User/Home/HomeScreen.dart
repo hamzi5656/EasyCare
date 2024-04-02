@@ -68,6 +68,7 @@ import 'package:flutter/foundation.dart';
           width: MediaQuery.of(context).size.width*0.45,
           child: ClipRRect(borderRadius: BorderRadius.circular(20),
             child: Image.network("https://cdn.pixabay.com/photo/2015/06/10/16/36/mark-804938_640.jpg"))))],),
+     
       const  SizedBox(height: 20,),
 //services
 ServicesSliderHome(),
@@ -80,9 +81,9 @@ SizedBox(height: 20,),
           color: Colors.white,
           child: const  PopluarProducts(),)
 
-        ],),
-        ),
+        
+        ])
         )
-        );
-        }
-        }
+        ));
+        
+        }}

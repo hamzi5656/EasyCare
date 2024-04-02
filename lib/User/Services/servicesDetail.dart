@@ -245,23 +245,26 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
 
                      
                                  ),
-                                 Positioned(
-                                  bottom: 10,
-                                  left: 5,
-                                  right: 5,
-                                  child:
-                                  FloatingActionButton(
-                                    onPressed: (){
-                                     Navigator.push(
-            context,MaterialPageRoute(
-            builder: (context) => ProfileScreen() )
-            );
-                                  },
-                                  backgroundColor: Colors.deepPurple.withOpacity(.8),
-                                  child: Text("Book Now",
-                                  style:TextStyle(color: Colors.white,fontSize: 16) ,
-                                  ),
-                                  ))
+            //                      Positioned(
+            //                       bottom: 10,
+            //                       left: 5,
+            //                       right: 5,
+            //                       child:
+            //                       FloatingActionButton(
+            //                         onPressed: (){
+            //                          Navigator.push(
+            // context,MaterialPageRoute(
+            // builder: (context) =>  )
+            // );
+            //                       },
+            //                       backgroundColor: Colors.deepPurple.withOpacity(.8),
+            //                       child: Text("Book Now",
+            //                       style:TextStyle(color: Colors.white,fontSize: 16) ,
+            //                       ),
+            //                       )
+            //                       )
+                          
+                         
                            ],
                          ),
           ]

@@ -22,7 +22,7 @@ class ServicesSliderHome extends StatelessWidget {
         ],),
       ),
       SizedBox(height: 20,),
-      serviceviewCard(context, "asset/images/1.png", "Physiotherapist", "12992", "30 min", "Hamza", (){}),
+      serviceviewCard(context, "asset/images/gym.jpg", "Physiotherapist", "12992", "30 min", "Hamza", (){}),
 
     
     ],);

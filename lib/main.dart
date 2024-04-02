@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
      debugShowCheckedModeBanner: false,
       home:
       // Login(),
-    HomeNavigator()
+   HomeNavigator()
     );
   }
 }
