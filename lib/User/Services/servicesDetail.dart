@@ -98,6 +98,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -108,17 +109,24 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                      color: Colors.grey.withOpacity(.2),
-                     )
-        ,              Container(
+                     ),
+                   
+               Container(
                     height: MediaQuery.of(context).size.height*0.35,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image:
-                         AssetImage("asset/images/physiotherapist.jpg"),
+                         AssetImage("asset/images/gym.jpg"),
                     fit:BoxFit.fill )
                     ),
                   ),
+                    Positioned(top: 20,
+                      child: IconButton(onPressed: (){
+                        Navigator.pop(context);
+                      }, icon: Icon(
+                        Icons.arrow_back,color: Colors.black,
+                        ))),
                    Positioned(
                     top: 190,left: 15,right: 15,
                      child: Column(
@@ -214,7 +222,7 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                    children: [
                                                                     CircleAvatar(
-                                             backgroundImage:AssetImage("asset/images/physiotherapist.jpg") ,
+                                             backgroundImage:AssetImage("asset/images/gym.jpg") ,
                                            backgroundColor: Colors.blueGrey,
                                             radius: 30,
                                           ), 

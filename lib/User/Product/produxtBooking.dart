@@ -22,7 +22,7 @@
                     title: const Icon(
                     Icons.task_alt_rounded,
                     size: 70,
-                    color: Colors.blue,
+                    color: Colors.deepPurple,
                     ),
                     content:  const SizedBox(
                     height: 100,
@@ -38,14 +38,13 @@
                     child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                    backgroundColor: Colors.blue
-                                ), 
+                                    backgroundColor: Colors.deepPurple
+                                ),   
                                     onPressed: (){
                                       Navigator.push(context, MaterialPageRoute(builder: 
                                       (context)=>const HomeScreen()));
                                     },
-                                    
-                                    child: const Text("Back to Home",style: TextStyle(color: Colors.white,fontSize: 16),)),
+       child: const Text("Back to Home",style: TextStyle(color: Colors.white,fontSize: 16),)),
                     ),
 
                     ],
@@ -107,11 +106,11 @@
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                    Text("1992",
+                    Text("Product Name",style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Text("Gym Trainer",
+                    Text("Description",style: TextStyle(fontWeight: FontWeight.bold)
                     ),
-                    Text("Duration:",
+                    Text("Price",style: TextStyle(fontWeight: FontWeight.bold)
                     ),
                     ],
                     ),
@@ -122,7 +121,7 @@
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                     image: 
-                    AssetImage("")
+                    AssetImage("asset/images/wheelchairred.jpg")
                     )),
                     )
                     ],
@@ -150,7 +149,7 @@
                     borderRadius: BorderRadius.circular(8.0),
                     ),
                     contentPadding: const EdgeInsets.symmetric(vertical: 20.0),
-                    hintText: "Enter Your Address",
+                    hintText: "Enter Your City",
                     prefixIcon: const Icon(
                     Icons.location_on_outlined,
                     size: 20,
@@ -161,31 +160,32 @@
                     validator: (value) {
                     RegExp regex = RegExp(r'^.{6,}$');
                     if (value!.isEmpty) {
-                    return "Address cannot be empty";
+                    return "This Field cannot be empty";
                     }
                     if (!regex.hasMatch(value)) {
-                    return "Please enter your Address";
+                    return "Please enter your City name";
                     }
                     return null;
                     },
                     ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    TextButton(
-                    onPressed: () {},
-                    child: Text(
-                    "Choose From Map",
+                    // Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // children: [
+                    // TextButton(
+                    // onPressed: () {},
+                    // child: Text(
+                    // "Choose From Map",
 
-                    )),
-                    TextButton(
-                    onPressed: () {},
-                    child: Text(
-                    "Use Current Location",
+                    // )),
+                    // TextButton(
+                    // onPressed: () {},
+                    // child: Text(
+                    // "Use Current Location",
 
-                    )),
-                    ],
-                    ),
+                    // )),
+                    // ],
+                    // ),
+                 
                     Text("Description",),
                     SizedBox(
                     child: TextFormField(
@@ -235,14 +235,15 @@
                     borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding:  EdgeInsets.all(10.0),
                     child: Column(
                     children: [
                     Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    const Text("Service Price"),
-                    Text("sjsj}",
+                    const Text("Product Price",
+                    style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text("3999",style: TextStyle(fontWeight: FontWeight.bold)
                     ),
                     ],
                     ),
@@ -250,8 +251,8 @@
                     Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    const Text("Tax"),
-                    Text("hasjasj}",
+                    const Text("GST Tax",style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("340.0",style: TextStyle(fontWeight: FontWeight.bold)
                     ),
                     ],
                     ),
@@ -259,8 +260,8 @@
                     Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    const Text("Total Amount"),
-                    Text("book}",
+                    const Text("Total Amount",style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text("5800.0",style: TextStyle(fontWeight: FontWeight.bold)
                     ),
                     ],
                     ),
@@ -285,7 +286,7 @@
                     title: const Icon(
                     Icons.expand_circle_down_outlined,
                     size: 70,
-                    color: Colors.blue,
+                    color: Colors.deepPurple,
                     ),
                     content:  const SizedBox(
                     height: 100,
@@ -313,7 +314,7 @@
                     style: ElevatedButton.styleFrom(
                     shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     maximumSize: const Size(110, 50),
-                    backgroundColor: Colors.blue
+                    backgroundColor: Colors.deepPurple
                     ), 
                     onPressed: processPayment,
 
@@ -326,7 +327,7 @@
                     },
                     );
                     },
-                    backgroundColor: const Color.fromARGB(255, 35, 131, 209),
+                    backgroundColor: Colors.deepPurple,
                     child: const Text(
                     "Confirm Booking",
                     style: TextStyle(color: Colors.white, fontSize: 16),
