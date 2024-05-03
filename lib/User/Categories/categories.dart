@@ -73,10 +73,9 @@ class ProductCategories extends StatelessWidget {
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const GymProducts() ));
     
         },
-          child: CategoriesWidget(Catimage: "asset/images/3.jpg", categoriesText: "hsh")),
+          child: CategoriesWidget(Catimage: "asset/images/gym.jpg", categoriesText: "Gym")),
         SizedBox(width: 30,),
-        InkWell(onTap: (){},
-          child: CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Fitness")),
+       
        
          ],),
      ),

@@ -1,3 +1,4 @@
+import 'package:auth/User/Profile/about.dart';
 import 'package:auth/User/Profile/editProfile.dart';
 import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
@@ -69,7 +70,11 @@ class ProfileScreen extends StatelessWidget {
             ),),
           ),
         ),),),
-     ProfileRow(myicon: Icons.warning, profileText: "About App"),
+     InkWell(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutApp()));
+      },
+      child: ProfileRow(myicon: Icons.warning, profileText: "About App")),
      ProfileRow(myicon: Icons.privacy_tip_outlined, profileText: "Privacy Polices"),
      ProfileRow(myicon: Icons.phone, profileText: "Contact Us"),
      ProfileRow(myicon: Icons.logout, profileText: "Logout"),
