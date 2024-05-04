@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 Future<void> main() async {
-  PersistentShoppingCart();
+await PersistentShoppingCart().init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

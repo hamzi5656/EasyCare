@@ -79,53 +79,20 @@ Card(
     ]
     ,),
 
-    bottomSheet: Container(color: Colors.deepPurple,
-      height: 80,child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+    bottomSheet: Container(color: Colors.white,
+      height: 70,child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
         children:  [
       TextButton(onPressed: (){},child: Text("Counter",
-        style: TextStyle(color: Colors.white,fontSize: 20),),),
-        // PersistentShoppingCart().showAndUpdateCartItemWidget(
-        //   inCartWidget: Text("remow"), 
-        //   notInCartWidget: Text("add"),
-        //    product: PersistentShoppingCartItem(
-        //     productId: "12",
-        //      productName: "12",
-        //       unitPrice: 12,
-        //        quantity: 12))
-        //  PersistentShoppingCart().showAndUpdateCartItemWidget(
-        //             inCartWidget: 
-        //              SizedBox(width: double.infinity,
-        //                child: Container(height: 55,
-        //                decoration: BoxDecoration(color: Colors.white,
-        //                 borderRadius: BorderRadius.circular(10),
-        //                 border: Border.all(color: Colors.red)),
-        //                  child: Center(
-        //                    child: Text("Remove",
-        //                    style: TextStyle(fontWeight: FontWeight.bold,
-        //                     fontSize: 18,
-        //                    color: Colors.black),),
-        //                  ),
-        //                ),
-        //              ),
-        //             notInCartWidget:
-        //              SizedBox(width: double.infinity,
-        //                child: Container(height: 55,
-        //                decoration: BoxDecoration(color: Colors.blue,
-        //                 borderRadius: BorderRadius.circular(10)),
-        //                  child: Center(
-        //                    child: Text("Add to cart",
-        //                    style: TextStyle(
-        //                     fontSize: 18,
-        //                    color: Colors.white),),
-        //                  ),
-        //                ),
-        //              ),
-        //              product: PersistentShoppingCartItem(
-        //               productId: "123", 
-                      
-        //               productName: "`123",
-        //                unitPrice: double.parse("123"), 
-        //                quantity: 123)),
+        style: TextStyle(color: Colors.black,fontSize: 20),),),
+        PersistentShoppingCart().showAndUpdateCartItemWidget(
+          inCartWidget: Text("Add",style: TextStyle(color: Colors.green,fontSize: 18),),
+           notInCartWidget:  Text("Remove",style: TextStyle(color: Colors.red,fontSize: 18),),
+           product: PersistentShoppingCartItem(
+            productId: "12",
+             productName: "11", 
+             unitPrice: 2, 
+             quantity: 2))
+     
                   
         ],),),
         );

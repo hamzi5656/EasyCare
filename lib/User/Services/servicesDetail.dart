@@ -211,10 +211,10 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                        ), 
                                     SizedBox(height: MediaQuery.of(context).size.height*0.01,),
                                         InkWell(
-                                          onTap: (){
-                                            Navigator.push(context, MaterialPageRoute(builder: 
-                                            (context)=> Test()));
-                                          },
+                                          // onTap: (){
+                                          //   Navigator.push(context, MaterialPageRoute(builder: 
+                                          //   (context)=> Test()));
+                                          // },
                                           child: Card(
                                              child: Padding(
                                                                  padding: const EdgeInsets.all(12),
@@ -246,7 +246,16 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                           ),
                                           ),
                                         ),                              
-                                       ],
+                                      
+        SizedBox(height: 20,),
+        Container(
+          height: 60,width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.deepPurple.withOpacity(.8)),
+          child: TextButton(onPressed: (){}, child: Text("Hire Me",style: TextStyle(color: Colors.white),)))
+                                     
+                                      ],
                                      ),
                                     
 ]  ),
