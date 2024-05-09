@@ -22,8 +22,20 @@ class ServicesSliderHome extends StatelessWidget {
         ],),
       ),
       SizedBox(height: 20,),
-      serviceviewCard(context, "asset/images/gym.jpg", "Physiotherapist", "12992", "30 min", "Hamza", (){}),
-
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+          child: Row(
+            
+            children: [
+           serviceviewCard(context, "asset/images/3.jpg", "Physiotherapist", "12992", "30 min", "Hamza", (){}),
+            serviceviewCard(context, "asset/images/doctorService.jpg", "Doctor", "12992", "30 min", "Dr Habib", (){}),
+            serviceviewCard(context, "asset/images/2.jpg", "Suregon", "12992", "30 min", "Dr Seemab", (){}),
+           
+          ],),
+        ),
+      )
     
     ],);
   

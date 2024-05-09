@@ -8,11 +8,40 @@ import 'package:auth/User/Home/services.Home.dart';
 import 'package:auth/User/Services/serviceslider.dart';
 import 'package:auth/User/Services/serviceslist.dart';
         import 'package:auth/User/cart/CartScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
         import 'package:flutter/material.dart';
-        class HomeScreen extends StatelessWidget {
+        class HomeScreen extends StatefulWidget {
         const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  List<Map> allpopularProduct=[];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+     
+         getpopularproduct();
+  }
+  getpopularproduct(){
+    
+    FirebaseFirestore.instance.collection("Product").where("popular", isEqualTo: true).get().then((response) {
+    List<Map<String,dynamic>> temp=[];
+     for (var element in response.docs) {
+       temp.add({...element.data(), "id":element.id });
+     }
+     allpopularProduct = temp; 
+    setState(() { });
+    print(allpopularProduct);
+    print("=====================");
+    
+    });
+  }
         @override
         Widget build(BuildContext context) {
         return Scaffold(
@@ -79,7 +108,13 @@ SizedBox(height: 20,),
         const  SizedBox(height: 10,),
         Container(padding: EdgeInsets.all(10),
           color: Colors.white,
-          child: const  PopluarProducts(),)
+          child: Wrap(
+children: [
+  ...allpopularProduct.map((e) => Product(productinfo: e)),
+],
+
+
+          ),)
 
         
         ])

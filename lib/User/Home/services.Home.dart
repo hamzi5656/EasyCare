@@ -15,7 +15,7 @@ import 'package:marquee/marquee.dart';
     onTap: () {
      Navigator.push(context, MaterialPageRoute(builder: (context)=>  ServiceDetails()));
     },
-    child:   Container(
+    child:   Container(margin: EdgeInsets.only(left: 1,right: 10),
       height: MediaQuery.of(context).size.height * 0.32,
       width: MediaQuery.of(context).size.width * 0.45,
     decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
