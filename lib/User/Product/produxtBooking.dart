@@ -1,12 +1,62 @@
-                    import 'package:auth/User/Home/HomeScreen.dart';
+                    import 'dart:io';
+
+import 'package:auth/User/Home/HomeScreen.dart';
                     import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
                     class ProductBooking extends StatefulWidget {
+                      
 
                     const ProductBooking({super.key, });
 
                     @override
                     State<ProductBooking> createState() => _ServiceBookingState();
                     }
+                     bool isImageSelected = false;
+  // File? imageFile;
+  //                   _pickImagefromGallery() async {
+  //   try {
+  //     final pickedImage =
+  //         await ImagePicker().pickImage(source: ImageSource.gallery);
+  //     if (pickedImage != null) {
+  //       print("==========================");
+  //       print(pickedImage.path);
+  //       setState(() {
+  //         imageFile = File(pickedImage.path);
+  //         isImageSelected = true;
+          
+  //       });
+  //       print(imageFile);
+  //       print("=================++++++++++++++++++++++++=========");
+
+  //     } else {
+  //       print('User didnt pick any image.');
+  //     }
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
+
+
+   File? _imgFile;
+    
+      void takeSnapshot() async {
+        final ImagePicker picker = ImagePicker();
+        final XFile? img = await picker.pickImage(
+          source: ImageSource.gallery);
+        if (img == null) return;
+        print(img.path);
+        print("=================");
+        
+          _imgFile = File(img.path); // convert it to a Dart:io file
+      setState(() {  });
+
+          print(_imgFile);
+        print("==========++++++++++++++++++++=======");
+      }
+    
+  
+  void setState(Null Function() param0) {
+  }
 
                     class _ServiceBookingState extends State<ProductBooking> {
                     final TextEditingController _Address = TextEditingController();
@@ -76,7 +126,7 @@
                     color: Colors.white,
                     ),
                     title: const Text(
-                    "Book Service",
+                    "Buy Product",
                     style: TextStyle(
                     color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
                     ),
@@ -90,48 +140,23 @@
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                    Text("Product",),
-                    Center(
-                    child: Container(
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 210, 220, 231),
-                    borderRadius: BorderRadius.circular(15)),
-                    child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                    Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                    Text("Product Name",style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text("Description",style: TextStyle(fontWeight: FontWeight.bold)
-                    ),
-                    Text("Price",style: TextStyle(fontWeight: FontWeight.bold)
-                    ),
-                    ],
-                    ),
-                    Container(
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    width: MediaQuery.of(context).size.width * 0.3,
-                    decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                    image: 
-                    AssetImage("asset/images/wheelchairred.jpg")
-                    )),
-                    )
-                    ],
-                    ),
-                    ),
-                    ),
-                    Text(
-                    "Your Address",
+                         MaterialButton(
+                color: Colors.deepPurple,
+                child: const Text("Attach File",
+                    style: TextStyle(color: Colors.white)),
+                onPressed: () async {
+                  takeSnapshot();
+                }),
+                Container(child:
+                _imgFile  != null?
+                 Image.file(_imgFile! ,height: 200,width: double.infinity,):
+                  Text(
+                    "Error",
 
                     ),
+                 
+                 ), 
+                  
                     TextFormField(
                     controller: _Address,
 
@@ -185,7 +210,7 @@
                     // )),
                     // ],
                     // ),
-                 
+                 SizedBox(height: 20,),
                     Text("Description",),
                     SizedBox(
                     child: TextFormField(
@@ -225,52 +250,28 @@
                     },
                     ),
                     ),
-                    Text("Price Details",),
-                    Center(
-                    child: Container(
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 210, 220, 231),
-                    borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Padding(
-                    padding:  EdgeInsets.all(10.0),
-                    child: Column(
-                    children: [
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    const Text("Product Price",
-                    style: TextStyle(fontWeight: FontWeight.bold),),
-                    Text("3999",style: TextStyle(fontWeight: FontWeight.bold)
-                    ),
-                    ],
-                    ),
-                    const Divider(),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    const Text("GST Tax",style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text("340.0",style: TextStyle(fontWeight: FontWeight.bold)
-                    ),
-                    ],
-                    ),
-                    const Divider(),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    const Text("Total Amount",style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text("5800.0",style: TextStyle(fontWeight: FontWeight.bold)
-                    ),
-                    ],
-                    ),
-                    const Divider(),
-                    ],
-                    ),
-                    ),
-                    ),
-                    ),
+                    SizedBox(height: 20,),
+                    Text("Here is ou easypaisa account number send your amount on this for confirming your product"),
+                SizedBox(height: 10,),
+                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround ,
+                  children: [
+                   Text("Account Number"), 
+                   Text("03115373314")
+                   ],),
+                   SizedBox(height: 10,),
+                      Row(crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround ,
+                  children: [
+                   Text("Account Name"), 
+                   Text("Hamza Saleem")
+                   ],),
+//
+
+
+
+
                     SizedBox(
                     height: MediaQuery.of(context).size.height*0.02,
                     ),
@@ -329,7 +330,7 @@
                     },
                     backgroundColor: Colors.deepPurple,
                     child: const Text(
-                    "Confirm Booking",
+                    "order Now",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     ),

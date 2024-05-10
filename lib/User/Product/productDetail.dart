@@ -272,11 +272,13 @@ class ProductDetail extends StatelessWidget {
                 productId:"${productDetails["id"]}",
                 productName: "${productDetails["name"]}",
                 unitPrice: double.parse("${"${productDetails["price"]}"}"),
-                quantity:10,
+                quantity:1,
+                productThumbnail: "${productDetails["img"]}",
+              
               ),
             ),
           ],
-        ),
+        ),  
       ),
     );
   }

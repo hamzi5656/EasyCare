@@ -5,12 +5,15 @@ import 'package:auth/User/Home/Searchbar.dart';
         import 'package:auth/User/Home/popularProduct.dart';
 import 'package:auth/User/Home/services.Home.dart';
         import 'package:auth/User/Home/slider.dart';
+import 'package:auth/User/Product/productDetail.dart';
 import 'package:auth/User/Services/serviceslider.dart';
 import 'package:auth/User/Services/serviceslist.dart';
         import 'package:auth/User/cart/CartScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
         import 'package:flutter/material.dart';
+        import 'package:persistent_shopping_cart/model/cart_model.dart';
+import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
         class HomeScreen extends StatefulWidget {
         const HomeScreen({super.key});
 
@@ -46,12 +49,20 @@ class _HomeScreenState extends State<HomeScreen> {
         Widget build(BuildContext context) {
         return Scaffold(
         appBar: AppBar(title:const  Text("EasyCare",
-        style:TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,actions: [
-        Badge(child: InkWell(onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const  CartScreen()));
-        },
-        child: const Icon(Icons.shopping_bag,color: Colors.white,)),)
-        ],),
+        style:TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,
+        actions: [
+   PersistentShoppingCart().showCartItemCountWidget(
+    cartItemCountWidgetBuilder: ((itemCount) =>
+      IconButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> 
+        CartScreen()));
+      }, icon: Badge(
+        label: Text(itemCount.toString()),
+        child: Icon(Icons.shopping_bag),
+      ))
+    ))
+        ],
+        ),
         body: 
         SingleChildScrollView(
         scrollDirection: Axis.vertical,
