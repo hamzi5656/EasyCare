@@ -1,5 +1,5 @@
 import 'package:auth/User/Profile/about.dart';
-import 'package:auth/User/Profile/editProfile.dart';
+import 'package:auth/User/Profile/myprofile.dart';
 import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
      ),
      const   SizedBox(height: 10,),
      InkWell(onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfile() ));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> EditProfile() ));
      },
       child: ProfileRow(myicon: Icons.mode_edit_outlined, profileText: "Edit Profile")),
  

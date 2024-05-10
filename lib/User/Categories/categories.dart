@@ -25,7 +25,7 @@ class ProductCategories extends StatelessWidget {
        child: 
        Row(children: [ 
         InkWell(onTap: (){
-           Navigator.push(context, MaterialPageRoute(builder: (context)=>const Mobility() ));
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> Mobility() ));
       
         },
           child: CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Mobility")),
