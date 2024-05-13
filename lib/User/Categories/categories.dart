@@ -32,7 +32,7 @@ class ProductCategories extends StatelessWidget {
        SizedBox(width: 30,),
        
       InkWell(onTap: (){
- Navigator.push(context, MaterialPageRoute(builder: (context)=>const HearingAids() ));
+ Navigator.push(context, MaterialPageRoute(builder: (context)=>const HeaeringAids() ));
       
       },
           child: CategoriesWidget(Catimage: "asset/images/hearing.jpg", categoriesText: "Hearing")),

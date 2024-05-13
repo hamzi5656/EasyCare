@@ -58,7 +58,7 @@
       CartScreen()));
       }, icon: Badge(
       label: Text(itemCount.toString()),
-      child: Icon(Icons.shopping_bag),
+      child: Icon(Icons.shopping_bag,color: Colors.white,),
       ))
       ))
       ],
