@@ -99,7 +99,7 @@ import 'package:marquee/marquee.dart';
                                      Row(
                                       children: [
                                         const Text(
-                                          " Duration:",
+                                          "Duration  ",
                                           style: TextStyle(fontSize: 12,fontWeight: FontWeight.w600),
                                         ),
                                         Text(

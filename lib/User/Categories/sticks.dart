@@ -49,25 +49,35 @@ class _MobilityState extends State<Sticks> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Divider(),
-              ClipRRect(
-              borderRadius: BorderRadius.only(topRight: Radius.circular(10),topLeft: Radius.circular(10),),
-                child: Image(image: NetworkImage(e['img']),
-                width: double.infinity,
-                height: 180,fit: BoxFit.cover,
-                           ),
-              ),
-              SizedBox(height: 10,),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    
-                    Text(e['name'],style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    
-                    Text(e['description'],maxLines: 2,style: TextStyle(fontSize: 16,fontWeight: FontWeight.normal)),
-                     Text(e['status'].toString() == true ? "Out of stock"  :"In Stock ",),
-                  ],
+                   ClipRRect(
+                borderRadius: BorderRadius.only(topRight: Radius.circular(10),topLeft: Radius.circular(10),),
+                  child: Image(image: NetworkImage(e['img']),
+                  width: double.infinity,
+                  height: 180,fit: BoxFit.cover,
+                             ),
+                ),
+                SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      
+                      Text(e['name'],style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                      Text("Description",style: TextStyle(fontWeight: FontWeight.bold),),
+                      SizedBox(height: 5,),
+                      
+                      Text(e['description'],maxLines: 2,style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.black.withOpacity(.6))),
+                      SizedBox(height: 5,),
+                      Row(children: [
+                        Icon(Icons.star,size: 16,color: Colors.green,),
+                        Icon(Icons.star,size: 16,color: Colors.green,),
+                        Icon(Icons.star,size: 16,color: Colors.green,),
+                        Icon(Icons.star,size: 16,color: Colors.green,),
+                        ],),
+                        SizedBox(height: 5,),
+                      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [Text("Status"), Text(e['status'].toString() == true ? "Out of stock"  :"In Stock ",),],)
+               ],
                 ),
               )
             

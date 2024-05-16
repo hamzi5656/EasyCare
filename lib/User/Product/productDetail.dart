@@ -162,6 +162,8 @@ class ProductDetail extends StatelessWidget {
             child: Column(
               children: [
                 Card(
+                  color: Colors.white,
+                  shadowColor: Colors.black,
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
@@ -171,16 +173,18 @@ class ProductDetail extends StatelessWidget {
                         Text(
                           "${productDetails["name"]}",
                           style: TextStyle(
-                            fontSize: 22,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(height: 10),
+                        Text("Descripton ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                        SizedBox(height: 10,),
                         Text(
                           "${productDetails["description"]}",
                           style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,color: Colors.black.withOpacity(.7)
                           ),
                         ),
                         SizedBox(height: 10),
@@ -188,7 +192,7 @@ class ProductDetail extends StatelessWidget {
                           "${productDetails["price"]} PKR",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: Colors.deepPurple.withOpacity(.8),
                             fontSize: 20,
                           ),
                         ),
@@ -198,7 +202,7 @@ class ProductDetail extends StatelessWidget {
                           children: [
                             Text(
                               "Duration: $hours hours",
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: 14),
                             ),
                           ],
                         ),
@@ -211,7 +215,7 @@ class ProductDetail extends StatelessWidget {
                               style: TextStyle(fontSize: 16),
                             ),
                             Text(
-                              "${productDetails["status"] == true ? "In Stock" : "Out Of Stock"}",
+                              "${productDetails["status"] == true ? "In Stock" : "Out Of Stock"}",style: TextStyle(color: Colors.green),
                             ),
                           ],
                         ),
@@ -219,7 +223,8 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-                Card(
+                Card(color: Colors.white,
+                shadowColor: Colors.black,
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
@@ -255,7 +260,7 @@ class ProductDetail extends StatelessWidget {
             TextButton(
               onPressed: () {},
               child: Text(
-                "Counter",
+                "Cart",
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
