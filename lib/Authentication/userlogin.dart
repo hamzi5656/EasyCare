@@ -1,32 +1,93 @@
-import 'package:auth/User/Authentication/userSignup.dart';
+import 'package:auth/Admin/homescreen.dart';
+import 'package:auth/Authentication/userSignup.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
+import 'package:auth/User/Home/HomeScreen.dart';
+import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   Login({super.key});
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
   @override
-  Widget build(BuildContext context) {
+  State<Login> createState() => _LoginState();
+}
 
+class _LoginState extends State<Login> {
+  TextEditingController emailController = TextEditingController();
 
+  TextEditingController passwordController = TextEditingController();
+     getUserType([String? uid]) {
+    final docRef = FirebaseFirestore.instance.collection("UserDetail").doc(uid);
+    docRef.get().then(
+      (doc) {
+        print("2");
+
+        Map<String, dynamic> userType = doc.data()!;
+        final type = userType["Type"];
+        print(userType);
+        NavigateUser(type);
+      },
+      onError: (e) => print("Error getting document: $e"),
+    );
+  }
+     NavigateUser(String title) {
     
+    switch (title) {
+      case "user":
+        {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: ((context) => HomeScreen())));
+          break;
+        }
+
+      case "Admin":
+        {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: ((context) => 
+             AdminHome())));
+          break;
+        }
+    }
+  } 
     loginHandler() async {
       try {
         await FirebaseAuth.instance
             .signInWithEmailAndPassword(
                 email: emailController.text, password: passwordController.text)
             .then((res) {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) =>HomeNavigator()));
+                  getUserType(res.user!.uid);
+                  print("sep 1");
         });
       } on FirebaseAuthException catch (e) {
         print(e.code);
       }
     }
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    
+
+  // checkUser() async {
+  //   User? user = FirebaseAuth.instance.currentUser;
+  //   if (user != null) {
+  //     String? _userType = await getString("Type");
+  //     print(_userType);
+  //     if (_userType != null) {
+  //       NavigateUser(_userType);
+  //     }
+  //   }
+  // }
+
+
+
+    
+
+    
 
     return Scaffold(
       body: SafeArea(

@@ -1,10 +1,12 @@
-import 'package:auth/User/Authentication/userlogin.dart';
+import 'package:auth/Admin/homescreen.dart';
+import 'package:auth/Authentication/userlogin.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/firebase_options.dart';
 import 'package:auth/test.dart';  
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 Future<void> main() async {
 await PersistentShoppingCart().init();
@@ -23,11 +25,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
- return const MaterialApp(
+ return MaterialApp(
      debugShowCheckedModeBanner: false,
-      home:
-      // Login(),
-   HomeNavigator()
+     builder: EasyLoading.init(),
+      home: 
+      //AdminHome()
+     Login(),
+   //HomeNavigator()
     );
   }
 }

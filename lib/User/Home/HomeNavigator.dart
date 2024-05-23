@@ -30,11 +30,10 @@ class _HomeNavigatorState extends State<HomeNavigator> {
       body: 
       IndexedStack(
         index: currentIndex,
-        children:const  [
+        children:  [
          HomeScreen(),
          ProductCategories(),
-         Profileuser(),
-        
+         FavouriteScreen(),
          ProfileScreen(),
 
           ],

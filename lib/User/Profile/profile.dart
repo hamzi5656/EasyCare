@@ -1,11 +1,27 @@
+import 'package:auth/Authentication/userlogin.dart';
 import 'package:auth/User/Profile/about.dart';
 import 'package:auth/User/Profile/myprofile.dart';
 import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+    Logouthandler() {
+    FirebaseAuth.instance.signOut().then((value) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) =>  Login()),
+      );
+      print("Logout");
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
      InkWell(onTap: (){
       Navigator.push(context, MaterialPageRoute(builder: (context)=> EditProfile() ));
      },
-      child: ProfileRow(myicon: Icons.mode_edit_outlined, profileText: "Edit Profile")),
+      child: ProfileRow(myicon: Icons.person, profileText: "My Profile")),
  
    const   SizedBox(height: 10,),
    
@@ -77,7 +93,11 @@ class ProfileScreen extends StatelessWidget {
       child: ProfileRow(myicon: Icons.warning, profileText: "About App")),
      ProfileRow(myicon: Icons.privacy_tip_outlined, profileText: "Privacy Polices"),
      ProfileRow(myicon: Icons.phone, profileText: "Contact Us"),
-     ProfileRow(myicon: Icons.logout, profileText: "Logout"),
+     InkWell(
+      onTap: (){
+       Logouthandler();
+      },
+      child: ProfileRow(myicon: Icons.logout, profileText: "Logout")),
 
       ],),);
   }
