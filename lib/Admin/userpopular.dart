@@ -15,14 +15,14 @@ import 'package:auth/User/Categories/categories.dart';
       import 'package:flutter/material.dart';
       import 'package:persistent_shopping_cart/model/cart_model.dart';
       import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
-      class AllProducts extends StatefulWidget {
-      const AllProducts({super.key});
+      class userpopular extends StatefulWidget {
+      const userpopular({super.key});
 
       @override
-      State<AllProducts> createState() => _AllProductsState();
+      State<userpopular> createState() => _userpopularState();
       }
 
-      class _AllProductsState extends State<AllProducts> {
+      class _userpopularState extends State<userpopular> {
 
       List<Map> allpopularProduct=[];
       @override
