@@ -1,4 +1,5 @@
-import 'package:auth/Admin/homescreen.dart';
+import 'package:auth/Admin/adminnav.dart';
+import 'package:auth/Admin/adminhome.dart';
 import 'package:auth/Authentication/userSignup.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/User/Home/HomeScreen.dart';
@@ -47,11 +48,13 @@ class _LoginState extends State<Login> {
         {
           Navigator.of(context).push(
               MaterialPageRoute(builder: ((context) => 
-             AdminHome())));
+             Adminnavigator())));
           break;
         }
     }
   } 
+   
+   
     loginHandler() async {
       try {
         await FirebaseAuth.instance

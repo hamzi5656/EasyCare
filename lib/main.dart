@@ -1,4 +1,4 @@
-import 'package:auth/Admin/homescreen.dart';
+import 'package:auth/Admin/adminhome.dart';
 import 'package:auth/Authentication/userlogin.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/firebase_options.dart';

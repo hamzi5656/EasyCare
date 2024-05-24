@@ -7,7 +7,20 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+const List<String> category = <String>[
+  'blind',
+  'Mobility',
+  'Gym',
+  'deaf'
+];
+const List<bool> popularproduct = <bool>[
+ true,
+ false
+];
+const List<bool> productstatus = <bool>[
+ true,
+ false,
+];
 
 class AdminHome extends StatefulWidget {
  
@@ -18,11 +31,15 @@ class AdminHome extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<AdminHome> {
+  String  categoryValue = category.first;
+    bool popularValue = popularproduct.first;
+    bool statusValue = productstatus.first;
+
+  
   TextEditingController _productTitle = TextEditingController();
   TextEditingController _productPrice = TextEditingController();
   TextEditingController _productqty = TextEditingController();
-  TextEditingController _productUnit = TextEditingController();
-
+  TextEditingController _productCategory = TextEditingController();
   TextEditingController _productDesc = TextEditingController();
 
   File? tempImage;
@@ -84,22 +101,18 @@ class _HomeScreenState extends State<AdminHome> {
         imageUrl = await ref.getDownloadURL();
         setState(() {});
       }
-      // GeoFirePoint Location = GeoFlutterFire().point(
-      //     latitude: _adLocation.latitude, longitude: _adLocation.longitude);
-
-     
+    
       await FirebaseFirestore.instance.collection("Product").doc().set({
         "name": _productTitle.text,
         "price": int.parse(_productPrice.text),
-        "Img": imageUrl,
+        "img": imageUrl,
+        "category": categoryValue,
         "name": _productTitle.text,
-        "ProductPrice": 10000,
-        "FeatueredImage": imageUrl,
-        // "SalePercent": 20,
-        // "isSale": false,
-        // "storeID": widget.storeDetail["id"],
-        // "Seller": widget.storeDetail["sellerID"],
-        "CreatedAt": Timestamp.now(),
+        "price": _productPrice.text,
+        "status": statusValue,
+        "popular": popularValue,
+        "description" : _productDesc.text,
+        "duration": Timestamp.now(),
         "Qty": 20, //int.parse(_productqty.text),
       }).then((value) {
         EasyLoading.showSuccess("Product Uploaded");
@@ -200,6 +213,9 @@ class _HomeScreenState extends State<AdminHome> {
           TextInputFieldWithoutIcon("Product Title", _productTitle,
               "Product Name", TextInputType.text, (p0) {}),
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+           TextInputFieldWithoutIcon("Product Description", _productDesc,
+              "Product Description", TextInputType.text, (p0) {}),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Flexible(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,109 +225,100 @@ class _HomeScreenState extends State<AdminHome> {
                   child: TextInputFieldWithoutIcon("Item Quantity", _productqty,
                       "1", TextInputType.text, (p0) {}),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: TextInputFieldWithoutIcon("Unit", _productUnit, "Pair",
-                      TextInputType.text, (p0) {}),
+             
+                     Column(mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                        Text("Category"),
+                        SizedBox(height: 5,),
+                         Container(
+                                           color: Colors.white,
+                                           width: MediaQuery.of(context).size.width * 0.4,
+                                           child: DropdownMenu<String>(
+                                             width: MediaQuery.of(context).size.width * 0.4,
+                                             initialSelection: category.first,
+                                             onSelected: (String? value) {
+                          setState(() {
+                            categoryValue = value!;
+                          });
+                                             },
+                                             dropdownMenuEntries: category
+                            .map<DropdownMenuEntry<String>>((String value) {
+                          return DropdownMenuEntry<String>(
+                              value: value, label: value);
+                                             }).toList(),
+                                           ),
+                                         ),
+                       ],
+                     ),
+              
+               
+                 SizedBox(
+                  height: 10,
                 ),
               ],
             ),
           ),
           TextInputFieldWithoutIcon("Price (Pkr)", _productPrice, "Rs 150",
               TextInputType.text, (p0) {}),
-          // ListView.builder(
-          //     shrinkWrap: true,
-          //     itemCount: variations.length,
-          //     itemBuilder: (context, index) {
-          //       return ListTile(
-          //         title: Text(
-          //             'Name: ${variations[index]['name']} | Size: ${variations[index]['size']}'),
-          //         trailing: IconButton(
-          //           icon: Icon(Icons.delete),
-          //           onPressed: () => deleteVariation(index),
-          //         ),
-          //       );
-          //     }),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Color.fromARGB(48, 0, 0, 0)),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                  children: [
-                    // Text("${_adLocation.latitude}"),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.pin_drop),
-                    ),
-                  ],
-                ),
-              ),
-
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: Icon(Icons.pin_drop),
-              // ),
-         
-              // ElevatedButton(
-              //   onPressed: () {
-              //     Navigator.of(context)
-              //         .push(
-              //             MaterialPageRoute(builder: (context) => MapSample()))
-              //         .then((result) {
-              //       if (result != null) {
-              //         ScaffoldMessenger.of(context).showSnackBar(
-              //           SnackBar(content: Text('Received data: $result')),
-              //         );
-              //         setState(() {
-              //           _adLocation = result;
-              //         });
-              //       }
-              //     });
-              //   },
-              //   child: Text("Open Map"),
-              // ),
-         
-         
-            ],
-          ),
-          Row(
-            children: [
-              Transform.scale(
-                  scale: 1,
-                  child: Switch(
-                    onChanged: toggleSwitch,
-                    value: isSwitched,
-                    activeColor: Color(0xffE8ECF8),
-                    activeTrackColor: Colors.blue,
-
-                    // activeTrackColor: Color(0xffE8ECF8),
-                    inactiveThumbColor: Color(0xffE8ECF8),
-                    inactiveTrackColor: Colors.blue,
-                  )),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.02,
-                height: MediaQuery.of(context).size.height * 0.13,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Variable Product',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: GoogleFonts.poppins().fontFamily,
-                    ),
-                  ),
-                  Text('Does this product have Different Prices'),
-                ],
-              ),
-            ],
-          ),
+      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                            Text("Popular"),
+                            SizedBox(height: 5,),
+                             Container(
+                                               color: Colors.white,
+                                               width: MediaQuery.of(context).size.width * 0.4,
+                                               child: DropdownMenu<bool>(
+                                                 width: MediaQuery.of(context).size.width * 0.4,
+                                                 initialSelection: popularproduct.first,
+                                                 onSelected: (bool? value) {
+                              setState(() {
+                                popularValue = value!;
+                              });
+                                                 },
+                                                 dropdownMenuEntries: popularproduct
+                                .map<DropdownMenuEntry<bool>>((bool value) {
+                              return DropdownMenuEntry<bool>(
+                                  value: value, label: "$value");
+                                                 }).toList(),
+                                               ),
+                                             ),
+                           ],
+                         ),
+                Column(mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                            Text("Status"),
+                            SizedBox(height: 5,),
+                             Container(
+                                               color: Colors.white,
+                                               width: MediaQuery.of(context).size.width * 0.4,
+                                               child: DropdownMenu<bool>(
+                                                 width: MediaQuery.of(context).size.width * 0.4,
+                                                 initialSelection: productstatus.first,
+                                                 onSelected: (bool? value) {
+                              setState(() {
+                                statusValue = value!;
+                              });
+                                                 },
+                                                 dropdownMenuEntries: popularproduct
+                                .map<DropdownMenuEntry<bool>>((bool value) {
+                              return DropdownMenuEntry<bool>(
+                                  value: value, label: "${value}");
+                                                 }).toList(),
+                                               ),
+                                             ),
+                           ],
+                         ),
+        ],
+      ),
+              
+            
+               
+          
           SizedBox(height: 25),
           ElevatedButton(onPressed: addProductHandler, child: Text("Add Product")),
         ]),
