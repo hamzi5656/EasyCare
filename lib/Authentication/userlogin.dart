@@ -40,7 +40,7 @@ class _LoginState extends State<Login> {
       case "user":
         {
           Navigator.of(context).push(
-              MaterialPageRoute(builder: ((context) => HomeScreen())));
+              MaterialPageRoute(builder: ((context) => HomeNavigator())));
           break;
         }
 

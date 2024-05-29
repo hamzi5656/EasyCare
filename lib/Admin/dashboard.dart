@@ -39,7 +39,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
           child: Row(
           
             children: [
-              Icon(Icons.insert_emoticon_outlined),
+              Icon(Icons.punch_clock_rounded),
               SizedBox(width: 20,),
           Text("Other Products")
                

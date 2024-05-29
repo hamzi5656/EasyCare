@@ -16,26 +16,10 @@ class _dltprodState extends State<dltprod> {
    
       print("step 1 ______________");
 
-      deleteProd();
+      
      
       }
       
-      deleteProd(){
-
-      FirebaseFirestore.instance.collection("Product").doc("id").delete().then((response) {
-     
-      setState(() {
-
-        print("+++++++++++++++++++++++++++++++++++");
-       
-       });
-    
-      print("_________________________________________");
-
-      });
-      }
-      
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +51,7 @@ class _dltprodState extends State<dltprod> {
        Text("${widget.productinf["description"]}",maxLines: 1,),
        Text( "${widget.productinf["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
       IconButton(onPressed: (){
-       deleteProd;
+      
       }, icon: Icon(Icons.delete))
            ],),
      ),);

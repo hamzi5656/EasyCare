@@ -1,3 +1,7 @@
+import 'package:auth/User/Categories/Fitness.dart';
+import 'package:auth/User/Categories/HearingAids.dart';
+import 'package:auth/User/Categories/Mobility.dart';
+import 'package:auth/User/Categories/visualAids.dart';
 import 'package:flutter/material.dart';
 class PopularCategories extends StatelessWidget {
   const PopularCategories({super.key});
@@ -14,16 +18,41 @@ class PopularCategories extends StatelessWidget {
            
           const   SizedBox(height: 15,),
             Row(children: [
-              CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Dumb"),
-             const SizedBox(width: 10,),
-              CategoriesWidget(Catimage: "asset/images/wheelchair.jpg", categoriesText: "Blind"),
-                const  SizedBox(width: 10,),
-              CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Deaf"),
-               const   SizedBox(width: 10,),
-              CategoriesWidget(Catimage: "asset/images/wheelchair3.jpg", categoriesText: "Fitness"),
-             const  SizedBox(width: 10,),
-                CategoriesWidget(Catimage: "asset/images/wheelchair2.jpg", categoriesText: "Medical"),
-               const   SizedBox(width: 10,),
+              InkWell(
+                onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Mobility()));
+                },
+                child: CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Chairs")),
+             const SizedBox(width: 14,),
+              InkWell(
+                          onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> VisualAids()));
+                },
+                child: CategoriesWidget(Catimage: "asset/images/visusal.png", categoriesText: "Glasses")),
+                const  SizedBox(width: 14,),
+              InkWell(
+                          onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> HeaeringAids()));
+                },
+                child: CategoriesWidget(Catimage: "asset/images/hearing.jpg", categoriesText: "Hearing")),
+               const   SizedBox(width: 14,),
+              InkWell(
+                          onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Fitness()));
+                },
+                child: CategoriesWidget(Catimage: "asset/images/shoes.jpg", categoriesText: "Shoes")),
+             const  SizedBox(width: 14,),
+                InkWell(
+                            onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  Fitness()));
+                },
+                  child: CategoriesWidget(Catimage: "asset/images/youga mat.jpg", categoriesText: "Mat")),
+               const   SizedBox(width: 14,),
            
             ],)
             

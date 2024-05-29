@@ -1,5 +1,6 @@
                     import 'dart:io';
 
+import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/User/Home/HomeScreen.dart';
                     import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -12,32 +13,8 @@ import 'package:image_picker/image_picker.dart';
                     State<ProductBooking> createState() => _ServiceBookingState();
                     }
                      bool isImageSelected = false;
-  // File? imageFile;
-  //                   _pickImagefromGallery() async {
-  //   try {
-  //     final pickedImage =
-  //         await ImagePicker().pickImage(source: ImageSource.gallery);
-  //     if (pickedImage != null) {
-  //       print("==========================");
-  //       print(pickedImage.path);
-  //       setState(() {
-  //         imageFile = File(pickedImage.path);
-  //         isImageSelected = true;
-          
-  //       });
-  //       print(imageFile);
-  //       print("=================++++++++++++++++++++++++=========");
 
-  //     } else {
-  //       print('User didnt pick any image.');
-  //     }
-  //   } catch (e) {
-  //     print(e.toString());
-  //   }
-  // }
-
-
-   File? _imgFile;
+      File? _imgFile;
     
       void takeSnapshot() async {
         final ImagePicker picker = ImagePicker();
@@ -92,7 +69,7 @@ import 'package:image_picker/image_picker.dart';
                                 ),   
                                     onPressed: (){
                                       Navigator.push(context, MaterialPageRoute(builder: 
-                                      (context)=>const HomeScreen()));
+                                      (context)=>const HomeNavigator()));
                                     },
        child: const Text("Back to Home",style: TextStyle(color: Colors.white,fontSize: 16),)),
                     ),
