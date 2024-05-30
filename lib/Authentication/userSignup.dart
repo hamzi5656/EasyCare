@@ -21,6 +21,7 @@ Signupmethod() async {
   
     FirebaseFirestore.instance.collection("UserDetail").doc(User.user!.uid).set({
       "Name": _nameController.text,
+      "email":_emailController,
     }).then((value) {
   
     });

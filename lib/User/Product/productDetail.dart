@@ -1,3 +1,4 @@
+import 'package:auth/User/Product/commetns.dart';
 import 'package:auth/models/productModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -119,29 +120,33 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-                Card(color: Colors.white,
-                shadowColor: Colors.black,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Reviews",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          "There will be the Reviews of users that will be against the product.",
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+               
+               
+                // Card(color: Colors.white,
+                // shadowColor: Colors.black,
+                //   child: Padding(
+                //     padding: const EdgeInsets.all(20),
+                //     child: Column(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           "Reviews",
+                //           style: TextStyle(
+                //             fontSize: 18,
+                //             fontWeight: FontWeight.bold,
+                //           ),
+                //         ),
+                //         SizedBox(height: 15),
+                //         Text(
+                //           "There will be the Reviews of users that will be against the product.",
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+
+               
               ],
             ),
       

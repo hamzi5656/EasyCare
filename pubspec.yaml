@@ -24,6 +24,7 @@ dependencies:
   marquee: ^2.2.3
   image_picker: ^1.0.0
   flutter_easyloading: ^3.0.5
+  comment_box: ^0.0.18
   firebase_storage: ^11.6.9
   flutter:
     sdk: flutter
