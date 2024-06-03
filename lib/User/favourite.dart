@@ -1,45 +1,50 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flutter/material.dart';
+import 'package:auth/User/Home/HomeScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-class Profileuser extends StatefulWidget {
-  const Profileuser({super.key});
+class FavouriteScreen extends StatefulWidget {
+  const FavouriteScreen({super.key});
 
   @override
-  State<Profileuser> createState() => _ProfileState();
+  State<FavouriteScreen> createState() => _FavouriteScreenState();
 }
 
-class _ProfileState extends State<Profileuser> {
-  Map<String, dynamic> userDetails = {};
-
+class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
+  List userDetails = [];
+@override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getUserData();
+    print("initjkhjkhkj sthhate");
+  
   }
-
-  getUserData() {
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print("LLLLLLLLLLLLLLLLL");
+  }
+  
+    getUserData() {
     FirebaseFirestore.instance
         .collection("UserDetail")
-        .doc(getUserId()) 
+        .doc() 
         .get()
         .then((res) {
-      setState(() {
-        userDetails = res.data()!['favProd'];
-      });
+     print(userDetails);
+
     });
+  
   }
-
-
-
+  
   @override
   Widget build(BuildContext context) {
     return
      Stack(
       children: [
-        SizedBox(
+        Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
         ),
@@ -63,13 +68,13 @@ class _ProfileState extends State<Profileuser> {
                     child: Center(
                       child: Text(
                         "${userDetails["favProd"]}",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 22),
                       ),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 50),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
                     child: Column(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       // crossAxisAlignment: CrossAxisAlignment.center,
@@ -206,11 +211,11 @@ class _ProfileState extends State<Profileuser> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff821DFB),
-                  minimumSize: const Size(220, 50),
+                  backgroundColor: Color(0xff821DFB),
+                  minimumSize: Size(220, 50),
                   textStyle:
-                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              child: const Text(
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              child: Text(
                 "Logout",
                 style: TextStyle(color: Colors.white),
               ),
@@ -221,7 +226,5 @@ class _ProfileState extends State<Profileuser> {
     );
   }
   
-  String? getUserId() {
-    return null;
-  }
+  String? getUserId() {}
 }

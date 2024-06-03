@@ -19,7 +19,6 @@ class _MobilityState extends State<Fitness> {
       getMobilityProducts();
       }
    getMobilityProducts(){
-
       FirebaseFirestore.instance.collection("Product").where("category", isEqualTo: "fitness").where("popular", isEqualTo: false).get().then((response) {
       List<Map<String,dynamic>> temp=[];
       for (var element in response.docs) {

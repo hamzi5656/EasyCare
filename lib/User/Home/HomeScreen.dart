@@ -22,11 +22,13 @@
       List<Map> allpopularProduct=[];
       @override
       void initState() {
-      // TODO: implement initState
-      super.initState();
+   
+      print("==================");
 
       getpopularproduct();
+     
       }
+      
       getpopularproduct(){
 
       FirebaseFirestore.instance.collection("Product").where("popular", isEqualTo: true, ).get().then((response) {
@@ -40,7 +42,10 @@
       print("=====================");
 
       });
+     
       }
+      
+
       @override
       Widget build(BuildContext context) {
       return Scaffold(

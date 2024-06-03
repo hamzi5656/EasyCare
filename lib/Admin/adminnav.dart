@@ -1,22 +1,25 @@
+import 'package:auth/Admin/userpopular.dart';
+import 'package:auth/Admin/dashboard.dart';
+import 'package:auth/Admin/adminhome.dart';
 import 'package:auth/User/Categories/categories.dart';
 import 'package:auth/User/Home/HomeScreen.dart';
-import 'package:auth/User/Product/commetns.dart';
 import 'package:auth/User/Profile/profile.dart';
 import 'package:auth/User/favourite.dart';
+import "package:auth/test.dart";
 import "package:flutter/material.dart";
 
-class HomeNavigator extends StatefulWidget {
-  const HomeNavigator({super.key});
+class Adminnavigator extends StatefulWidget {
+  const Adminnavigator({super.key});
 
   @override
-  State<HomeNavigator> createState() => _HomeNavigatorState();
+  State<Adminnavigator> createState() => _HomeNavigatorState();
 }
 
-class _HomeNavigatorState extends State<HomeNavigator> {
+class _HomeNavigatorState extends State<Adminnavigator> {
   List<IconData> navigationIcons = [
    Icons.home,
-   Icons.category_outlined,
-   Icons.favorite_outline,
+   Icons.store,
+   Icons.circle,
    Icons.person,
   ];
   List<String> iconName = ["home", "store", " Favourite", "profile"];
@@ -31,15 +34,15 @@ class _HomeNavigatorState extends State<HomeNavigator> {
       IndexedStack(
         index: currentIndex,
         children:  [
-         HomeScreen(),
-         ProductCategories(),
+       AdminHome(),
+       ButtonScreen(),
          FavouriteScreen(),
          ProfileScreen(),
 
           ],
       ),
       bottomNavigationBar: Container(
-        height: 82,
+        height: 70,
         margin: const EdgeInsets.all(0
             ),
         padding: const EdgeInsets.all(0),
@@ -49,7 +52,7 @@ class _HomeNavigatorState extends State<HomeNavigator> {
         ),
         child: Column(children: [
           Container(
-            color: Colors.black,
+            color: Colors.blueGrey,
             width: double.infinity,
             height: 1,
           ),

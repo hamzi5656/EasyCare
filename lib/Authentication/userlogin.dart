@@ -1,5 +1,6 @@
 import 'package:auth/User/Authentication/userSignup.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
+import 'package:auth/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class Login extends StatelessWidget {
                 email: emailController.text, password: passwordController.text)
             .then((res) {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) =>const HomeNavigator()));
+              context, MaterialPageRoute(builder: (context) =>HomeNavigator()));
         });
       } on FirebaseAuthException catch (e) {
         print(e.code);
@@ -34,7 +35,7 @@ class Login extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Center(
+              Center(
                 child: Text(
                   "Welcome Back!",
                   style: TextStyle(
@@ -44,31 +45,31 @@ class Login extends StatelessWidget {
                 ),
               ),
 
-              const Text(
+              Text(
                 "Login to continue",
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     fontFamily: "poppins"),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
-              const SizedBox(height: 40,),
+              SizedBox(height: 40,),
               Flexible(
                 child: TextField(
                   controller: emailController,
                   decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Email",
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Flexible(
@@ -76,21 +77,21 @@ class Login extends StatelessWidget {
                   controller: passwordController,
                   decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Password",
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: EdgeInsets.only(right: 10.0),
+                  padding: const EdgeInsets.only(right: 10.0),
                   child: Text(
                     "Forget Password?",
                     style: TextStyle(
@@ -100,37 +101,36 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 40,
               ),
               ElevatedButton(
                 onPressed: () {
                   loginHandler();
                 },
+                child: Text("Login",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                 style: ElevatedButton.styleFrom(
-                    //  primary: Colors.deepPurple, // Background color
-                    // onPrimary: Colors.white, 
-                    foregroundColor: Colors.white, backgroundColor: Colors.deepPurple, // Text color
+                    primary: Colors.deepPurple, // Background color
+                    onPrimary: Colors.white, // Text color
                     elevation: 5,
                     minimumSize: Size(
                         MediaQuery.sizeOf(context).width * .9,
                         MediaQuery.sizeOf(context).width *
                             .16) // Elevation (shadow)
                     ),
-                child: const Text("Login",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Center(
+                  Center(
                       child: Text(
                     "Don't Have an account?",
                     style: TextStyle(),
                   )),
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
                   InkWell(
@@ -138,7 +138,7 @@ class Login extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Signup()));
                     },
-                    child: const Text(
+                    child: Text(
                       "Signup",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
