@@ -5,6 +5,6 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) 
   {
-    return Scaffold(backgroundColor: Colors.amber);
+    return const Scaffold(backgroundColor: Colors.amber);
   }
 }

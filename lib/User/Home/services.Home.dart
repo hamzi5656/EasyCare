@@ -15,7 +15,7 @@ import 'package:marquee/marquee.dart';
     onTap: () {
      Navigator.push(context, MaterialPageRoute(builder: (context)=>  ServiceDetails()));
     },
-    child:   Container(margin: EdgeInsets.only(left: 1,right: 10),
+    child:   Container(margin: const EdgeInsets.only(left: 1,right: 10),
       height: MediaQuery.of(context).size.height * 0.32,
       width: MediaQuery.of(context).size.width * 0.45,
     decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
@@ -76,7 +76,7 @@ import 'package:marquee/marquee.dart';
                                                 child: Text(
                                               price,
                                              
-                                            style: TextStyle(color: Colors.white), 
+                                            style: const TextStyle(color: Colors.white), 
                           
                                             )),
                                           ),
@@ -95,7 +95,7 @@ import 'package:marquee/marquee.dart';
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(height: 5,),
+                                    const SizedBox(height: 5,),
                                      Row(
                                       children: [
                                         const Text(
@@ -108,11 +108,11 @@ import 'package:marquee/marquee.dart';
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: 10,),
+                                    const SizedBox(height: 10,),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                      CircleAvatar(
+                                      const CircleAvatar(
                                         backgroundColor: Colors.green,
                                         radius: 15,
                                         backgroundImage: AssetImage(

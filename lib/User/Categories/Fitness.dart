@@ -32,10 +32,11 @@ class _MobilityState extends State<Fitness> {
 
       });
       }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fitness",style: TextStyle(color: Colors.white),),
+        title: const Text("Fitness",style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.deepPurple,),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -46,40 +47,40 @@ class _MobilityState extends State<Fitness> {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductDetail(productDetails: e)));
               },
-              child: Card(margin: EdgeInsets.all(15),
+              child: Card(margin: const EdgeInsets.all(15),
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                  
                   ClipRRect(
-                borderRadius: BorderRadius.only(topRight: Radius.circular(10),topLeft: Radius.circular(10),),
+                borderRadius: const BorderRadius.only(topRight: Radius.circular(10),topLeft: Radius.circular(10),),
                   child: Image(image: NetworkImage(e['img']),
                   width: double.infinity,
                   height: 180,fit: BoxFit.cover,
                              ),
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       
-                      Text(e['name'],style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      Text("Description",style: TextStyle(fontWeight: FontWeight.bold),),
-                      SizedBox(height: 5,),
+                      Text(e['name'],style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                      const Text("Description",style: TextStyle(fontWeight: FontWeight.bold),),
+                      const SizedBox(height: 5,),
                       
                       Text(e['description'],maxLines: 2,style: TextStyle(fontSize: 14,fontWeight: FontWeight.normal,color: Colors.black.withOpacity(.6))),
-                      SizedBox(height: 5,),
-                      Row(children: [
+                      const SizedBox(height: 5,),
+                      const Row(children: [
                         Icon(Icons.star,size: 16,color: Colors.green,),
                         Icon(Icons.star,size: 16,color: Colors.green,),
                         Icon(Icons.star,size: 16,color: Colors.green,),
                         Icon(Icons.star,size: 16,color: Colors.green,),
                         ],),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text("Status"), Text(e['status'].toString() == true ? "Out of stock"  :"In Stock ",),],)
+                        children: [const Text("Status"), Text(e['status'].toString() == true ? "Out of stock"  :"In Stock ",),],)
                  ],
                   ),
                 )

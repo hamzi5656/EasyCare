@@ -1,10 +1,6 @@
 //ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_const, non_constant_identifier_names, prefer_const_constructors_in_immutables
 
-import 'dart:developer';
 
-import 'package:auth/User/Profile/profile.dart';
-import 'package:auth/test.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
 

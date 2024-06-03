@@ -1,6 +1,5 @@
 import 'package:auth/User/Product/productDetail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Product extends StatelessWidget {
@@ -23,7 +22,7 @@ class Product extends StatelessWidget {
         ))); 
       },
       child:
-       Container(margin: EdgeInsets.only(top: 10,left: 2,right: 2,bottom: 10),
+       Container(margin: const EdgeInsets.only(top: 10,left: 2,right: 2,bottom: 10),
         
         decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
         height: 280,width: 170,
@@ -36,14 +35,14 @@ class Product extends StatelessWidget {
             image: NetworkImage(
 
            "${productinfo["img"]}")),
-          SizedBox(height: 10,),
-          Text("${productinfo["name"]}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+          const SizedBox(height: 10,),
+          Text("${productinfo["name"]}",style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
           Text(
                               "Duration: $hours hours",
-                              style: TextStyle(fontSize: 16),
+                              style: const TextStyle(fontSize: 16),
                             ),
           Text("${productinfo["description"]}",maxLines: 1,),
-          Text( "${productinfo["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
+          Text( "${productinfo["price"]}".toString(),style: const TextStyle(fontWeight: FontWeight.bold),),
           
               ],),
         ),),

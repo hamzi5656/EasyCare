@@ -1,9 +1,6 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flutter/material.dart';
-import 'package:auth/User/Home/HomeScreen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Profileuser extends StatefulWidget {
@@ -42,7 +39,7 @@ class _ProfileState extends State<Profileuser> {
     return
      Stack(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
         ),
@@ -66,13 +63,13 @@ class _ProfileState extends State<Profileuser> {
                     child: Center(
                       child: Text(
                         "${userDetails["favProd"]}",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 22),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 50),
                     child: Column(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       // crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,11 +206,11 @@ class _ProfileState extends State<Profileuser> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff821DFB),
-                  minimumSize: Size(220, 50),
+                  backgroundColor: const Color(0xff821DFB),
+                  minimumSize: const Size(220, 50),
                   textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              child: Text(
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              child: const Text(
                 "Logout",
                 style: TextStyle(color: Colors.white),
               ),
@@ -224,5 +221,7 @@ class _ProfileState extends State<Profileuser> {
     );
   }
   
-  String? getUserId() {}
+  String? getUserId() {
+    return null;
+  }
 }

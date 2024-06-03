@@ -48,7 +48,7 @@ class CategoriesWidget extends StatelessWidget {
         CircleAvatar(
           radius: 30,
       backgroundImage:AssetImage(Catimage) ,),
-      SizedBox(height: 10,),
+      const SizedBox(height: 10,),
     Text(categoriesText),
     ],);
   }

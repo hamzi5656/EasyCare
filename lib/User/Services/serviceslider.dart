@@ -10,18 +10,18 @@ class ServicesSliderHome extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.start,
       children: [
       Padding(
-        padding:  EdgeInsets.all(8.0),
+        padding:  const EdgeInsets.all(8.0),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [ 
-          Text("Services",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+          const Text("Services",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
           InkWell(
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> ServicesList()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> const ServicesList()));
           },
-            child: Text("See All",style: TextStyle(color: Colors.deepPurple,fontSize: 16),))
+            child: const Text("See All",style: TextStyle(color: Colors.deepPurple,fontSize: 16),))
         ],),
       ),
-      SizedBox(height: 20,),
+      const SizedBox(height: 20,),
       SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Padding(

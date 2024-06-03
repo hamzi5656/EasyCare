@@ -5,7 +5,7 @@ class AboutApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("About US",style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),
+      appBar: AppBar(title: const Text("About US",style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),
       body: SingleChildScrollView(
         child: SafeArea(
         child: Column
@@ -14,8 +14,8 @@ class AboutApp extends StatelessWidget {
           Container(
         color: Colors.grey.withOpacity(.2),
             child:
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Column(mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
               children: [

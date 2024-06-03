@@ -25,24 +25,24 @@ class ProductCategories extends StatelessWidget {
        child: 
        Row(children: [ 
         InkWell(onTap: (){
-           Navigator.push(context, MaterialPageRoute(builder: (context)=> Mobility() ));
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> const Mobility() ));
       
         },
           child: CategoriesWidget(Catimage: "asset/images/wheelchairred.jpg", categoriesText: "Mobility")),
-       SizedBox(width: 30,),
+       const SizedBox(width: 30,),
        
       InkWell(onTap: (){
  Navigator.push(context, MaterialPageRoute(builder: (context)=>const HeaeringAids() ));
       
       },
           child: CategoriesWidget(Catimage: "asset/images/hearing.jpg", categoriesText: "Hearing")),
-       SizedBox(width: 30,),
+       const SizedBox(width: 30,),
         InkWell(onTap: (){
            Navigator.push(context, MaterialPageRoute(builder: (context)=>const VisualAids() ));
     
         },
           child: CategoriesWidget(Catimage: "asset/images/visusal.png", categoriesText: "visual")),
-        SizedBox(width: 30,),
+        const SizedBox(width: 30,),
         InkWell(onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const Sticks() ));
     
@@ -51,7 +51,7 @@ class ProductCategories extends StatelessWidget {
        
          ],),
      ),
-     SizedBox(height: 20,),
+     const SizedBox(height: 20,),
          Padding(
        padding: const EdgeInsets.only(top: 10,bottom: 20,right: 20,left: 20),
        child: 
@@ -61,25 +61,25 @@ class ProductCategories extends StatelessWidget {
     
         },
           child: CategoriesWidget(Catimage: "asset/images/fitness.jpg", categoriesText: "Fitness")),
-       SizedBox(width: 30,),
+       const SizedBox(width: 30,),
        
       InkWell(onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>const Medical() ));
     
       },
           child: CategoriesWidget(Catimage: "asset/images/medical.jpg", categoriesText: "Medical")),
-       SizedBox(width: 30,),
+       const SizedBox(width: 30,),
         InkWell(onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const GymProducts() ));
     
         },
           child: CategoriesWidget(Catimage: "asset/images/gym.jpg", categoriesText: "Gym")),
-        SizedBox(width: 30,),
+        const SizedBox(width: 30,),
        
        
          ],),
      ),
-     SizedBox(height: 20,),
+     const SizedBox(height: 20,),
    //    Padding(
       //  padding: const EdgeInsets.all(8.0),
       //  child: 

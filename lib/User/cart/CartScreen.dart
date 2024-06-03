@@ -7,7 +7,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text("Cart",
+      title: const Text("Cart",
       style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),
       
       body: Column(
@@ -20,40 +20,40 @@ class CartScreen extends StatelessWidget {
       children: [
         Image(height: 100,width: 100,
           image: NetworkImage(data.productThumbnail.toString(),)),
-          SizedBox(width: 0,),
+          const SizedBox(width: 0,),
           Column(mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(data.productName,style: TextStyle(fontWeight: FontWeight.bold),),
+            Text(data.productName,style: const TextStyle(fontWeight: FontWeight.bold),),
             Text("${data.unitPrice}")
             ],),
                Column(
                   children: [
                     IconButton(onPressed: (){
                                   PersistentShoppingCart().incrementCartItemQuantity(data.productId);  },
-                                   icon: Icon(Icons.add),iconSize: 20,),
+                                   icon: const Icon(Icons.add),iconSize: 20,),
                                    Text(data.quantity.toString()),
                     IconButton(onPressed: (){
                                   PersistentShoppingCart().decrementCartItemQuantity(data.productId);  },
-                                   icon: Icon(Icons.minimize_outlined),iconSize: 20,),
+                                   icon: const Icon(Icons.minimize_outlined),iconSize: 20,),
                   ],
                 ),
 
      
             IconButton(onPressed: (){
               PersistentShoppingCart().removeFromCart(data.productId);  },
-               icon: Icon(Icons.delete)),
+               icon: const Icon(Icons.delete)),
              
       ],) ,), 
       
-    showEmptyCartMsgWidget: Text("No data")),
+    showEmptyCartMsgWidget: const Text("No data")),
  ),
  
 Expanded(flex: 1,
   child:  
   PersistentShoppingCart().showTotalAmountWidget(
   cartTotalAmountWidgetBuilder: (totalAmount){
-    return Text("Total Amount:  "+ totalAmount.toString(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+    return Text("Total Amount:  $totalAmount",style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
     );
   }) )
 
@@ -61,8 +61,8 @@ Expanded(flex: 1,
       bottomSheet: Container(height: 70,width: double.infinity,
          color:Colors.deepPurple,child: Center(child: InkWell(onTap: ()
          {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProductBooking()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> const ProductBooking()));
          },
-          child: Text("Check out",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),))),),);
+          child: const Text("Check out",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),))),),);
   }
 }

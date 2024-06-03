@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
      ),
      const   SizedBox(height: 10,),
      InkWell(onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> EditProfile() ));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> const EditProfile() ));
      },
       child: ProfileRow(myicon: Icons.mode_edit_outlined, profileText: "Edit Profile")),
  
