@@ -1,5 +1,6 @@
 import 'package:auth/Admin/adminnav.dart';
 import 'package:auth/Admin/adminhome.dart';
+import 'package:auth/Authentication/forgetpass.dart';
 import 'package:auth/Authentication/userSignup.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
 import 'package:auth/User/Home/HomeScreen.dart';
@@ -17,6 +18,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+ 
   TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
@@ -54,6 +56,7 @@ class _LoginState extends State<Login> {
     }
   } 
    
+ 
    
     loginHandler() async {
       try {
@@ -121,32 +124,41 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: 40,),
               Flexible(
-                child: TextField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      hintText: "Email",
-                      hintStyle: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                child: SizedBox(
+                  height: 50,
+                  child: TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(1),
+                        ),
+                        hintText: "Email",
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.grey)),
+                  ),
                 ),
               ),
               SizedBox(
                 height: 20,
               ),
               Flexible(
-                child: TextField(
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      hintText: "Password",
-                      hintStyle: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                child: SizedBox(
+                  height: 50,
+                  child: TextField(
+                    controller: passwordController,
+                    
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black),
+                          borderRadius: BorderRadius.circular(1),
+                        ),
+                        hintText: "Password",
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.grey)),
+                  ),
                 ),
               ),
               SizedBox(
@@ -156,12 +168,18 @@ class _LoginState extends State<Login> {
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 10.0),
-                  child: Text(
-                    "Forget Password?",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                        color: Colors.black),
+                  child: InkWell(
+                    onTap: (){
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgetPass()));
+                    },
+                    child: Text(
+                      "Forget Password?",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          color: Colors.black),
+                    ),
                   ),
                 ),
               ),

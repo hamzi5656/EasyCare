@@ -12,6 +12,7 @@ class Signup extends StatelessWidget {
 TextEditingController _emailController= TextEditingController();
 TextEditingController _passwordController= TextEditingController();
 TextEditingController _nameController= TextEditingController();
+// ignore: non_constant_identifier_names
 Signupmethod() async {
   try {
     FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -44,7 +45,7 @@ Signupmethod() async {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
+               const Center(
                 child: Text(
                   "Create Account",
                   style: TextStyle(
@@ -63,63 +64,68 @@ Signupmethod() async {
                       fontFamily: "poppins"),
                 ),
               ),
-              SizedBox(
+            const  SizedBox(
                 height: 80,
               ),
               Flexible(
                 child: TextField(
                   controller:_emailController,
                   decoration: InputDecoration(
+                    border:const OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(15),
+                        borderSide:const BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(1),
                       ),
                       hintText: "Email",
-                      hintStyle: TextStyle(
+                      hintStyle:  const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+           const   SizedBox(
                 height: 20,
               ),
               Flexible(
                 child: TextField(
                   controller: _nameController,
                   decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        
+                        borderSide:const  BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Full Name",
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+            const   SizedBox(
                 height: 20,
               ),
               Flexible(
                 child: TextField(
                   controller: _passwordController,
                   decoration: InputDecoration(
+                    border: const  OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Password",
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+             const  SizedBox(
                 height: 20,
               ),
               Flexible(
                 child: TextField(
                   decoration: InputDecoration(
+                    border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(1),
                       ),
                       hintText: "Confirm Password",
                       hintStyle: TextStyle(
@@ -135,7 +141,7 @@ Signupmethod() async {
                    Navigator.push(context,
                        MaterialPageRoute(builder: (context) => Login()));
                 },
-                child: Text("sign up"),
+                child: Text("Sign up"),
                 style: ElevatedButton.styleFrom(
                     primary: Colors.blue, // Background color
                     onPrimary: Colors.white, // Text color

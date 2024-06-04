@@ -12,13 +12,35 @@ class dltprod extends StatefulWidget {
 }
 
 class _dltprodState extends State<dltprod> {
-     void initState() {
-   
-      print("step 1 ______________");
+  
 
       
+ List<Map> dlt=[];
+      @override
+      void initState() {
+    
+      print("not dlt");
+
+      dltprod();
+      setState(() {
+        print("dltd");
+        dltprod();
+      });
      
       }
+      
+    
+   dltprod(){
+final docRef = FirebaseFirestore.instance.collection("Product").doc();
+
+final updates = <String, dynamic>{
+  "popular": FieldValue.delete(),
+};
+
+docRef.update(updates);
+
+}
+     
       
 
   @override
@@ -51,8 +73,10 @@ class _dltprodState extends State<dltprod> {
        Text("${widget.productinf["description"]}",maxLines: 1,),
        Text( "${widget.productinf["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
       IconButton(onPressed: (){
+      dltprod();
+      }, icon: Icon(Icons.delete)
       
-      }, icon: Icon(Icons.delete))
+    )
            ],),
      ),);
   }

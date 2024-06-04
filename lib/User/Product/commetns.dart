@@ -50,7 +50,9 @@ class _TestMeState extends State<TestMe> {
         backgroundColor: Colors.pink,
       ),
       body: Column(children: [
-        Center(child: Text("${"comment"}"))
+        Center(child: 
+        Text("")
+        )
         
         ],)
     );
