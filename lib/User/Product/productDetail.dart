@@ -4,12 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
-import 'package:intl/intl.dart';
 
 class ProductDetail extends StatelessWidget {
   Map productDetails;
 
-  ProductDetail({Key , required this.productDetails});
+  ProductDetail({super.key, Key , required this.productDetails});
   @override
   Widget build(BuildContext context) {
     Timestamp durationTimestamp = productDetails['duration'];
@@ -38,7 +37,7 @@ class ProductDetail extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 30,
                     right: 30,
                     child: Icon(Icons.favorite_outline, size: 28),
@@ -50,7 +49,7 @@ class ProductDetail extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.arrow_back),
+                      icon: const Icon(Icons.arrow_back),
                     ),
                   ),
                 ],
@@ -69,14 +68,14 @@ class ProductDetail extends StatelessWidget {
                       children: [
                         Text(
                           "${productDetails["name"]}",
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 10),
-                        Text("Descripton ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10),
+                        const Text("Descripton ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                        const SizedBox(height: 10,),
                         Text(
                           "${productDetails["description"]}",
                           style: TextStyle(
@@ -84,7 +83,7 @@ class ProductDetail extends StatelessWidget {
                             fontWeight: FontWeight.normal,color: Colors.black.withOpacity(.7)
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           "${productDetails["price"]} PKR",
                           style: TextStyle(
@@ -93,13 +92,13 @@ class ProductDetail extends StatelessWidget {
                             fontSize: 20,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Duration: $hours hours",
-                              style: TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 14),
                             ),
                           ],
                         ),
@@ -107,12 +106,12 @@ class ProductDetail extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Status:",
                               style: TextStyle(fontSize: 16),
                             ),
                             Text(
-                              "${productDetails["status"] == true ? "In Stock" : "Out Of Stock"}",style: TextStyle(color: Colors.green),
+                              productDetails["status"] == true ? "In Stock" : "Out Of Stock",style: const TextStyle(color: Colors.green),
                             ),
                           ],
                         ),
@@ -120,33 +119,29 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-               
-               
-                // Card(color: Colors.white,
-                // shadowColor: Colors.black,
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(20),
-                //     child: Column(
-                //       mainAxisAlignment: MainAxisAlignment.start,
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Text(
-                //           "Reviews",
-                //           style: TextStyle(
-                //             fontSize: 18,
-                //             fontWeight: FontWeight.bold,
-                //           ),
-                //         ),
-                //         SizedBox(height: 15),
-                //         Text(
-                //           "There will be the Reviews of users that will be against the product.",
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-
-               
+                Card(color: Colors.white,
+                shadowColor: Colors.black,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Reviews",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        Text(
+                          "There will be the Reviews of users that will be against the product.",
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
       
@@ -161,24 +156,24 @@ class ProductDetail extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Cart",
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
             PersistentShoppingCart().showAndUpdateCartItemWidget(
-              inCartWidget: Text(
+              inCartWidget: const Text(
                 "Remove",
                 style: TextStyle(color: Colors.red, fontSize: 18),
               ),
-              notInCartWidget: Text(
+              notInCartWidget: const Text(
                 "Add",
                 style: TextStyle(color: Colors.green, fontSize: 18),
               ),
               product: PersistentShoppingCartItem(
                 productId:"${productDetails["id"]}",
                 productName: "${productDetails["name"]}",
-                unitPrice: double.parse("${"${productDetails["price"]}"}"),
+                unitPrice: double.parse("${productDetails["price"]}"),
                 quantity:1,
                 productThumbnail: "${productDetails["img"]}",
               

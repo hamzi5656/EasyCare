@@ -1,16 +1,12 @@
 import 'package:auth/Admin/adminnav.dart';
 import 'package:auth/Admin/adminhome.dart';
-import 'package:auth/Authentication/forgetpass.dart';
 import 'package:auth/Authentication/userSignup.dart';
 import 'package:auth/User/Home/HomeNavigator.dart';
-import 'package:auth/User/Home/HomeScreen.dart';
-import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
+class Login extends StatelessWidget {
   Login({super.key});
 
   @override
@@ -18,9 +14,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
- 
   TextEditingController emailController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
      getUserType([String? uid]) {
     final docRef = FirebaseFirestore.instance.collection("UserDetail").doc(uid);
@@ -56,7 +50,6 @@ class _LoginState extends State<Login> {
     }
   } 
    
- 
    
     loginHandler() async {
       try {
@@ -64,36 +57,13 @@ class _LoginState extends State<Login> {
             .signInWithEmailAndPassword(
                 email: emailController.text, password: passwordController.text)
             .then((res) {
-                  getUserType(res.user!.uid);
-                  print("sep 1");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) =>HomeNavigator()));
         });
       } on FirebaseAuthException catch (e) {
         print(e.code);
       }
     }
-
-  @override
-  Widget build(BuildContext context) {
-
-
-    
-
-  // checkUser() async {
-  //   User? user = FirebaseAuth.instance.currentUser;
-  //   if (user != null) {
-  //     String? _userType = await getString("Type");
-  //     print(_userType);
-  //     if (_userType != null) {
-  //       NavigateUser(_userType);
-  //     }
-  //   }
-  // }
-
-
-
-    
-
-    
 
     return Scaffold(
       body: SafeArea(

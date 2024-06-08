@@ -1,51 +1,31 @@
-import 'package:auth/User/Product/productDetail.dart';
+import 'package:auth/models/productModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
 
 class dltprod extends StatefulWidget {
   Map productinf;
-  dltprod({super.key,required this.productinf });
- 
+  dltprod({super.key, required this.productinf});
+
   @override
   State<dltprod> createState() => _dltprodState();
 }
 
 class _dltprodState extends State<dltprod> {
-  
+     void initState() {
+   
+      print("step 1 ______________");
 
       
- List<Map> dlt=[];
-      @override
-      void initState() {
-    
-      print("not dlt");
-
-      dltprod();
-      setState(() {
-        print("dltd");
-        dltprod();
-      });
      
       }
-      
-    
-   dltprod(){
-final docRef = FirebaseFirestore.instance.collection("Product").doc();
-
-final updates = <String, dynamic>{
-  "popular": FieldValue.delete(),
-};
-
-docRef.update(updates);
-
-}
-     
       
 
   @override
   Widget build(BuildContext context) {
-       Timestamp durationTimestamp = widget.productinf['duration'];
+    Timestamp durationTimestamp = widget.productinf['duration'];
     DateTime durationDateTime = durationTimestamp.toDate();
 
     // Extracting hours from DateTime object
@@ -73,11 +53,15 @@ docRef.update(updates);
        Text("${widget.productinf["description"]}",maxLines: 1,),
        Text( "${widget.productinf["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
       IconButton(onPressed: (){
-      dltprod();
-      }, icon: Icon(Icons.delete)
       
-    )
+      }, icon: Icon(Icons.delete))
            ],),
      ),);
+  }
+
+  Future deleteImageFireBaseStore(String imageUrl) async {
+    final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+    Reference reference = firebaseStorage.refFromURL(imageUrl);
+    await reference.delete();
   }
 }

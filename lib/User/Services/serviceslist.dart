@@ -8,7 +8,7 @@ class ServicesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("All Services"),),
+    return Scaffold(appBar: AppBar(title: const Text("All Services"),),
     body: Column(children: [
   InkWell(
     onTap: (){
@@ -56,8 +56,8 @@ class ServicesList extends StatelessWidget {
              
           CircleAvatar(backgroundColor: Colors.white,
             child: Image.network(imageurl)),
-          SizedBox(width: 20,),
-          Text(serviceText,style: TextStyle(fontWeight: FontWeight.bold),)
+          const SizedBox(width: 20,),
+          Text(serviceText,style: const TextStyle(fontWeight: FontWeight.bold),)
               ],),
         ),),
     );

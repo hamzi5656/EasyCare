@@ -4,7 +4,7 @@ Widget AppbarScreen(){
   return
    AppBar(backgroundColor: Colors.purple,
     title: 
-    Column(
+    const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -16,7 +16,7 @@ Widget AppbarScreen(){
         Text("Make Shopping Easy",style: TextStyle(fontSize: 16,color: Colors.blue),),
       ],
     ),
-     actions: [   
+     actions: const [   
       Padding(padding: EdgeInsets.all(10.0),child:  Badge(child: Icon(Icons.badge),),)
    
 ],

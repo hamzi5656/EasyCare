@@ -127,7 +127,7 @@ import 'package:image_picker/image_picker.dart';
                 Container(child:
                 _imgFile  != null?
                  Image.file(_imgFile! ,height: 200,width: double.infinity,):
-                  Text(
+                  const Text(
                     "Error",
 
                     ),
@@ -187,8 +187,8 @@ import 'package:image_picker/image_picker.dart';
                     // )),
                     // ],
                     // ),
-                 SizedBox(height: 20,),
-                    Text("Description",),
+                 const SizedBox(height: 20,),
+                    const Text("Description",),
                     SizedBox(
                     child: TextFormField(
                     controller: _Address,
@@ -227,18 +227,18 @@ import 'package:image_picker/image_picker.dart';
                     },
                     ),
                     ),
-                    SizedBox(height: 20,),
-                    Text("Here is ou easypaisa account number send your amount on this for confirming your product"),
-                SizedBox(height: 10,),
-                 Row(
+                    const SizedBox(height: 20,),
+                    const Text("Here is ou easypaisa account number send your amount on this for confirming your product"),
+                const SizedBox(height: 10,),
+                 const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceAround ,
                   children: [
                    Text("Account Number"), 
                    Text("03115373314")
                    ],),
-                   SizedBox(height: 10,),
-                      Row(crossAxisAlignment: CrossAxisAlignment.start,
+                   const SizedBox(height: 10,),
+                      const Row(crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround ,
                   children: [
                    Text("Account Name"), 

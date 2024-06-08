@@ -12,7 +12,6 @@ class Signup extends StatelessWidget {
 TextEditingController _emailController= TextEditingController();
 TextEditingController _passwordController= TextEditingController();
 TextEditingController _nameController= TextEditingController();
-// ignore: non_constant_identifier_names
 Signupmethod() async {
   try {
     FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -45,7 +44,7 @@ Signupmethod() async {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               const Center(
+              Center(
                 child: Text(
                   "Create Account",
                   style: TextStyle(
@@ -64,7 +63,7 @@ Signupmethod() async {
                       fontFamily: "poppins"),
                 ),
               ),
-            const  SizedBox(
+              SizedBox(
                 height: 80,
               ),
               Flexible(
@@ -73,15 +72,15 @@ Signupmethod() async {
                   decoration: InputDecoration(
                     border:const OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
-                        borderSide:const BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(1),
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Email",
-                      hintStyle:  const TextStyle(
+                      hintStyle: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-           const   SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Flexible(
@@ -90,8 +89,7 @@ Signupmethod() async {
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
-                        
-                        borderSide:const  BorderSide(color: Colors.black),
+                        borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Full Name",
@@ -99,7 +97,7 @@ Signupmethod() async {
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-            const   SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Flexible(
@@ -116,7 +114,7 @@ Signupmethod() async {
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-             const  SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Flexible(
@@ -125,14 +123,14 @@ Signupmethod() async {
                     border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(1),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       hintText: "Confirm Password",
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               ElevatedButton(   
@@ -141,29 +139,32 @@ Signupmethod() async {
                    Navigator.push(context,
                        MaterialPageRoute(builder: (context) => Login()));
                 },
-                child: Text("Sign up"),
+                child: Text("sign up"),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // Background color
-                    onPrimary: Colors.white, // Text color
+                   //  primary: Colors.deepPurple, // Background color
+                    // onPrimary: Colors.white, 
+                    foregroundColor: Colors.white,
+                     backgroundColor: Colors.blue, // Text color
                     elevation: 5,
                     minimumSize: Size(
                         MediaQuery.sizeOf(context).width * .9,
                         MediaQuery.sizeOf(context).width *
                             .16) // Elevation (shadow)
                     ),
+                child: const Text("sign up"),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
+                  const Center(
                       child: Text(
                     "Have an account?",
                     style: TextStyle(),
                   )),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   InkWell(
@@ -173,7 +174,7 @@ Signupmethod() async {
                           MaterialPageRoute(
                               builder: (context) =>  Login()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Login",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),

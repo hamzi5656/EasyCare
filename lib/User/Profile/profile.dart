@@ -43,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
      ),
      const   SizedBox(height: 10,),
      InkWell(onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> EditProfile() ));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> const EditProfile() ));
      },
       child: ProfileRow(myicon: Icons.person, profileText: "My Profile")),
  

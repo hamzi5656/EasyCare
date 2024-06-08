@@ -3,16 +3,12 @@
       import 'package:auth/User/Home/Searchbar.dart';
       import 'package:auth/User/Home/popularCategories.dart';
       import 'package:auth/User/Home/popularProduct.dart';
-      import 'package:auth/User/Home/services.Home.dart';
       import 'package:auth/User/Home/slider.dart';
-      import 'package:auth/User/Product/productDetail.dart';
       import 'package:auth/User/Services/serviceslider.dart';
       import 'package:auth/User/Services/serviceslist.dart';
       import 'package:auth/User/cart/CartScreen.dart';
       import 'package:cloud_firestore/cloud_firestore.dart';
-      import 'package:flutter/foundation.dart';
       import 'package:flutter/material.dart';
-      import 'package:persistent_shopping_cart/model/cart_model.dart';
       import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
       class HomeScreen extends StatefulWidget {
       const HomeScreen({super.key});
@@ -60,10 +56,10 @@
       cartItemCountWidgetBuilder: ((itemCount) =>
       IconButton(onPressed: (){
       Navigator.push(context, MaterialPageRoute(builder: (context)=> 
-      CartScreen()));
+      const CartScreen()));
       }, icon: Badge(
       label: Text(itemCount.toString()),
-      child: Icon(Icons.shopping_bag,color: Colors.white,),
+      child: const Icon(Icons.shopping_bag,color: Colors.white,),
       ))
       ))
       ],
@@ -96,7 +92,7 @@
 
       },
       child: Container(
-      decoration: BoxDecoration(color: Colors.white,
+      decoration: const BoxDecoration(color: Colors.white,
 
       ),
       height: MediaQuery.of(context).size.height*0.152,
@@ -116,13 +112,13 @@
 
       const  SizedBox(height: 20,),
       //services
-      ServicesSliderHome(),
-      SizedBox(height: 20,),
+      const ServicesSliderHome(),
+      const SizedBox(height: 20,),
 
-      Align(alignment: Alignment.topLeft,
+      const Align(alignment: Alignment.topLeft,
       child: Text("Popular Product",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
       const  SizedBox(height: 10,),
-      Container(padding: EdgeInsets.all(10),
+      Container(padding: const EdgeInsets.all(10),
       color: Colors.white,
       child: Wrap(
       children: [
