@@ -1,3 +1,4 @@
+import 'package:auth/Admin/notpoular.dart';
 import 'package:auth/Admin/otherproducts.dart';
 import 'package:auth/Admin/userpopular.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
    SizedBox(height: 20,),
    InkWell(
         onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>otherProducts() ));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> NotPopular() ));
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),

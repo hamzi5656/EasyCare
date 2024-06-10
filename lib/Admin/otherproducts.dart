@@ -1,94 +1,85 @@
+import 'package:auth/models/productModel.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
 
-      import 'package:auth/User/Categories/categories.dart';
-      import 'package:auth/User/Home/Searchbar.dart';
-      import 'package:auth/User/Home/popularCategories.dart';
-      import 'package:auth/User/Home/popularProduct.dart';
-      import 'package:auth/User/Home/services.Home.dart';
-      import 'package:auth/User/Home/slider.dart';
-      import 'package:auth/User/Product/productDetail.dart';
-      import 'package:auth/User/Services/serviceslider.dart';
-      import 'package:auth/User/Services/serviceslist.dart';
-      import 'package:auth/User/cart/CartScreen.dart';
-      import 'package:cloud_firestore/cloud_firestore.dart';
-      import 'package:flutter/foundation.dart';
-      import 'package:flutter/material.dart';
-      import 'package:persistent_shopping_cart/model/cart_model.dart';
-      import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
-      class otherProducts extends StatefulWidget {
-      const otherProducts({super.key});
+class delProducts extends StatefulWidget {
+  Map productdlt;
+  delProducts({super.key, required this.productdlt});
 
-      @override
-      State<otherProducts> createState() => _otherProductsState();
-      }
+  @override
+  State<delProducts> createState() => _dltprodState();
+}
 
-      class _otherProductsState extends State<otherProducts> {
-
-      List<Map> allpopularProduct=[];
-      @override
-      void initState() {
+class _dltprodState extends State<delProducts> {
+     void initState() {
    
-      print("==================");
+      print("step 1 ______________");
 
-      getpopularproduct();
+      
      
       }
       
-      getpopularproduct(){
 
-      FirebaseFirestore.instance.collection("Product").where("popular", isEqualTo: false, ).get().then((response) {
-      List<Map<String,dynamic>> temp=[];
-      for (var element in response.docs) {
-      temp.add({...element.data(), "id":element.id });
-      }
-      allpopularProduct = temp; 
-      setState(() { });
-      print(allpopularProduct);
-      print("=====================");
+  @override
+  Widget build(BuildContext context) {
+    Timestamp durationTimestamp = widget.productdlt['duration'];
+    DateTime durationDateTime = durationTimestamp.toDate();
 
-      });
-      }
-      
-
-      @override
-      Widget build(BuildContext context) {
-      return Scaffold(
-      appBar: AppBar(title:const  Text("All Products",
-      style:TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,
+    // Extracting hours from DateTime object
+    int hours = durationDateTime.hour;
+    return Container(margin: EdgeInsets.only(top: 10,left: 2,right: 2,bottom: 10),
      
-      ),
-      body: 
-      SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+     decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
+     height: 300,width: 170,
+    child: Padding(
+       padding: const EdgeInsets.all(10.0),
+       child: Column(mainAxisAlignment: MainAxisAlignment.start,
+       crossAxisAlignment: CrossAxisAlignment.start,
+         children: [ 
+          
+       Image(height: 120,width: 120,
+         image: NetworkImage(
+    
+        "${widget.productdlt["img"]}")),
+       SizedBox(height: 10,),
+       Text("${widget.productdlt["name"]}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+       Text(
+                           "Duration: $hours hours",
+                           style: TextStyle(fontSize: 16),
+                         ),
+       Text("${widget.productdlt["description"]}",maxLines: 1,),
+       Text( "${widget.productdlt["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
+    IconButton(onPressed: (){
 
-      
+      Get.defaultDialog(
+                      title: 'Delete Product',
+                      content: const Text(
+                          'Are you sure want to delete this product'),
+                      textCancel: 'Cancel',
+                      textConfirm: 'Delete',
+                      contentPadding: const EdgeInsets.all(10.0),
+                      confirmTextColor: Colors.white,
+                      onCancel: () {},
+                      onConfirm: () async {
+                        Get.back();
+                        EasyLoading.show(status: 'Please wait');
+                        await deleteImageFireBaseStore(widget.productdlt['img']);
+                        await FirebaseFirestore.instance
+                            .collection('Product')
+                            .doc(widget.productdlt['id'])
+                            .delete().then((value) => EasyLoading.showSuccess("Product Deleted"));
+                      });
+    }, icon: Icon(Icons.delete))
+           ],),
+     ),);
+  }
 
- 
- 
-      const  SizedBox(height: 20,),
-      //services
-      // ServicesSliderHome(),
-      SizedBox(height: 20,),
-      Align(alignment: Alignment.topLeft,
-      child: Text("Product",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
-      const  SizedBox(height: 10,),
-      Container(padding: EdgeInsets.all(10),
-      color: Colors.white,
-      child: Wrap(
-      children: [
-      ...allpopularProduct.map((e) => Product(productinfo: e)),
-      ],
-
-
-      ),)
-
-
-      ])
-      )
-      ));
-
-      }}
+  Future deleteImageFireBaseStore(String imageUrl) async {
+    final FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+    Reference reference = firebaseStorage.refFromURL(imageUrl);
+    await reference.delete();
+  }
+}

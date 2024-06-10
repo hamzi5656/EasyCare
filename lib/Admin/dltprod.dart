@@ -33,7 +33,7 @@ class _dltprodState extends State<dltprod> {
     return Container(margin: EdgeInsets.only(top: 10,left: 2,right: 2,bottom: 10),
      
      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(color: Colors.grey.withOpacity(.2))),
-     height: 300,width: 170,
+     height: 320,width: 170,
     child: Padding(
        padding: const EdgeInsets.all(10.0),
        child: Column(mainAxisAlignment: MainAxisAlignment.start,
@@ -52,9 +52,27 @@ class _dltprodState extends State<dltprod> {
                          ),
        Text("${widget.productinf["description"]}",maxLines: 1,),
        Text( "${widget.productinf["price"]}".toString(),style: TextStyle(fontWeight: FontWeight.bold),),
-      IconButton(onPressed: (){
-      
-      }, icon: Icon(Icons.delete))
+    IconButton(onPressed: (){
+
+      Get.defaultDialog(
+                      title: 'Delete Product',
+                      content: const Text(
+                          'Are you sure want to delete this product'),
+                      textCancel: 'Cancel',
+                      textConfirm: 'Delete',
+                      contentPadding: const EdgeInsets.all(10.0),
+                      confirmTextColor: Colors.white,
+                      onCancel: () {},
+                      onConfirm: () async {
+                        Get.back();
+                        EasyLoading.show(status: 'Please wait');
+                        await deleteImageFireBaseStore(widget.productinf['img']);
+                        await FirebaseFirestore.instance
+                            .collection('Product')
+                            .doc(widget.productinf['id'])
+                            .delete().then((value) => EasyLoading.showSuccess("Product Deleted"));
+                      });
+    }, icon: Icon(Icons.delete))
            ],),
      ),);
   }

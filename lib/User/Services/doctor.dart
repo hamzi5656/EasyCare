@@ -6,17 +6,16 @@ import 'package:url_launcher/url_launcher.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 
-class ServiceDetails extends StatefulWidget {
+class DoctorService extends StatefulWidget {
   
-  ServiceDetails({super.key, });
+  DoctorService({super.key, });
 
   @override
-  State<ServiceDetails> createState() => _ServiceDetailsState();
+  State<DoctorService> createState() => _DoctorServiceState();
 }
 
-class _ServiceDetailsState extends State<ServiceDetails> {
-
-  final String phoneNumber = '1234567890';
+class _DoctorServiceState extends State<DoctorService> {
+   final String phoneNumber = '03115373314';
 
   Future<void> _launchPhoneDialer(String phoneNumber) async { 
     final Uri url = Uri(scheme: 'tel', path: phoneNumber);
@@ -48,7 +47,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image:
-                         AssetImage("asset/images/physiotherapist.jpg"),
+                         AssetImage("asset/images/1-10.jpg"),
                     fit:BoxFit.fill )
                     ),
                   ),
@@ -76,7 +75,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                   Text(
-                                    "Physiotherapist",
+                                    "Doctor",
 style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),                              
                                   ),
                                   Row(
@@ -130,7 +129,7 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                 borderRadius: BorderRadius.circular(10)
                               ),
                               child: Center(child: 
-                             Text("Abbottabad",
+                             Text("Mansehra",
                               style:TextStyle(color: Colors.white,fontSize: 16) ,
                               )),
                                        ),
@@ -153,7 +152,7 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                    children: [
                                                                     CircleAvatar(
-                                             backgroundImage:AssetImage("asset/images/gym.jpg") ,
+                                             backgroundImage:AssetImage("asset/images/1-10.jpg") ,
                                            backgroundColor: Colors.blueGrey,
                                             radius: 30,
                                           ), 
@@ -162,11 +161,11 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                             children: [
                                           
                                           Text(
-                                          "Jhon Wick",
+                                          "Doc Habib",
                                           style: const TextStyle(fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                          "Physiotherapist",
+                                          "Doctor",
                                           style: TextStyle(fontWeight: FontWeight.bold),
                                           ),
                                           
@@ -179,7 +178,6 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                         ),                              
                                       
         SizedBox(height: 20,),
- 
           SizedBox(
             height: 60,
             width: double.infinity,
@@ -191,6 +189,7 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
             child: Text('Hire ME'), 
                     ),
           )
+
                                       ],
                                      ),
                                     

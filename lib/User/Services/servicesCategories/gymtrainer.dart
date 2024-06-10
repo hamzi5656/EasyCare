@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 
@@ -14,6 +15,16 @@ class GymTrainer extends StatefulWidget {
 }
 
 class _ServiceDetailsState extends State<GymTrainer> {
+      final String phoneNumber = '1234567890';
+
+  Future<void> _launchPhoneDialer(String phoneNumber) async { 
+    final Uri url = Uri(scheme: 'tel', path: phoneNumber);
+    if (await canLaunch(url.toString())) {
+      await launch(url.toString());
+    } else {
+      throw 'Could not launch $url';
+    }
+  } 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,13 +178,17 @@ style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,),
                                         ),                              
                                       
         SizedBox(height: 20,),
-        Container(
-          height: 60,width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.deepPurple.withOpacity(.8)),
-          child: TextButton(onPressed: (){}, child: Text("Hire Me",style: TextStyle(color: Colors.white),)))
-                                     
+    SizedBox(
+            height: 60,
+            width: double.infinity,
+            child: ElevatedButton(
+              
+            onPressed: () {
+              _launchPhoneDialer(phoneNumber);
+            },
+            child: Text('Hire ME'), 
+                    ),
+          )            
                                       ],
                                      ),
                                     

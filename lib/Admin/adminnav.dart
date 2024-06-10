@@ -33,10 +33,10 @@ class _HomeNavigatorState extends State<Adminnavigator> {
       body: 
       IndexedStack(
         index: currentIndex,
-        children:  [
+        children:  [ 
        AdminHome(),
        ButtonScreen(),
-         FavouriteScreen(),
+        CALL(),
          ProfileScreen(),
 
           ],

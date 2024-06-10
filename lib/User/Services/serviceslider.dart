@@ -1,4 +1,6 @@
 import 'package:auth/User/Home/services.Home.dart';
+import 'package:auth/User/Services/doctor.dart';
+import 'package:auth/User/Services/servicesDetail.dart';
 import 'package:auth/User/Services/serviceslist.dart';
 import 'package:flutter/material.dart';
 class ServicesSliderHome extends StatelessWidget {
@@ -29,9 +31,31 @@ class ServicesSliderHome extends StatelessWidget {
           child: Row(
             
             children: [
-           serviceviewCard(context, "asset/images/3.jpg", "Physiotherapist", "12992", "30 min", "Hamza", (){}),
-            serviceviewCard(context, "asset/images/doctorService.jpg", "Doctor", "12992", "30 min", "Dr Habib", (){}),
-            serviceviewCard(context, "asset/images/2.jpg", "Suregon", "12992", "30 min", "Dr Seemab", (){}),
+           InkWell(
+            onTap: () {
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> ServiceDetails()));
+           
+    },
+             child: serviceviewCard(context, "asset/images/3.jpg", "Physiotherapist", "12992", "30 min", "Hamza",
+              (){
+             
+              
+             }),
+           ),
+            InkWell(
+              onTap: () {
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> DoctorService()));
+           
+    },
+              child: serviceviewCard(context, "asset/images/doctorService.jpg", "Doctor", "12992", "30 min", "Dr Habib", (){})),
+         
+         
+            InkWell(
+              onTap: () {
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> DoctorService()));
+           
+    },
+              child: serviceviewCard(context, "asset/images/2.jpg", "Suregon", "12992", "30 min", "Dr Seemab", (){})),
            
           ],),
         ),

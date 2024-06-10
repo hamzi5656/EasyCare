@@ -1,4 +1,5 @@
 import 'package:auth/User/Product/commetns.dart';
+import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/models/productModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +156,9 @@ class ProductDetail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
+              },
               child: const Text(
                 "Cart",
                 style: TextStyle(color: Colors.black, fontSize: 20),

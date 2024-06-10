@@ -26,6 +26,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   comment_box: ^0.0.18
   firebase_storage: ^11.6.9
+  url_launcher: ^6.0.20
   flutter:
     sdk: flutter
   google_fonts: 6.1.0

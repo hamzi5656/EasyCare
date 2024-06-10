@@ -1,5 +1,7 @@
 //login screen
 
+import 'dart:math';
+
 import 'package:auth/Authentication/userlogin.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -19,12 +21,7 @@ Signupmethod() async {
     password: _passwordController.text
   ).then((User){
   
-    FirebaseFirestore.instance.collection("UserDetail").doc(User.user!.uid).set({
-      "Name": _nameController.text,
-      "email":_emailController,
-    }).then((value) {
-  
-    });
+  addDocToFs(User.user!.uid);
 
   } );
  
@@ -33,7 +30,16 @@ Signupmethod() async {
  print(e.code);
 }
 }
-
+addDocToFs(String uid){
+   FirebaseFirestore.instance.collection("UserDetail").doc(uid).set({
+      "Name": _nameController.text,
+      "Type":"user",
+ 
+      
+  
+    }).then((value) {
+    });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +157,7 @@ Signupmethod() async {
                         MediaQuery.sizeOf(context).width *
                             .16) // Elevation (shadow)
                     ),
-                child: const Text("sign up"),
+               
               ),
               const SizedBox(
                 height: 20,
