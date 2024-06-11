@@ -1,5 +1,6 @@
 import 'package:auth/Admin/notpoular.dart';
 import 'package:auth/Admin/otherproducts.dart';
+import 'package:auth/Admin/userorders.dart';
 import 'package:auth/Admin/userpopular.dart';
 import 'package:flutter/material.dart';
 class ButtonScreen extends StatefulWidget {
@@ -12,7 +13,11 @@ class ButtonScreen extends StatefulWidget {
 class _ButtonScreenState extends State<ButtonScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Dashboard"),),
+    return Scaffold(appBar: AppBar(title: Text("Dashboard"),actions: [
+   IconButton(onPressed: (){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> UserOrders()));
+   }, icon: Icon(Icons.shopping_bag))
+      ],),
     body: SafeArea(child: Column(children: [
       InkWell(
         onTap: (){

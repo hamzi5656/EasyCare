@@ -5,6 +5,9 @@ import 'package:auth/User/cart/CartScreen.dart';
 import 'package:auth/test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -63,17 +66,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
       
      ),
    
-     InkWell( 
-      onTap: (){
-           Navigator.push(context, MaterialPageRoute(builder: (context)=>const Test () ));
+    //  InkWell( 
+    //   onTap: (){
+    //        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Test () ));
       
-      },
-      child: ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product")),
+    //   },
+    //   child: ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Product")),
+     
+     
      //ProfileRow(myicon: Icons.favorite_outline, profileText: "Favourite Services"),
-     InkWell(onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const  CartScreen()));
-     },
-      child: ProfileRow(myicon: Icons.shopping_bag_outlined, profileText: "My Cart")),
+   
+   
+    //  InkWell(onTap: (){
+    //     Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
+    //  },
+    //   child: ProfileRow(myicon: Icons.shopping_bag_outlined, profileText: "My Cart")),
       const SizedBox(height: 10,),
      Padding(
        padding: const EdgeInsets.only(),
@@ -95,7 +102,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
      ProfileRow(myicon: Icons.phone, profileText: "Contact Us"),
      InkWell(
       onTap: (){
-       Logouthandler();
+        Get.defaultDialog(
+                      title: 'Logout',
+                      content: const Text(
+                          'Are you sure want to Logout'),
+                      textCancel: 'Cancel',
+                      textConfirm: 'Logout',
+                      contentPadding: const EdgeInsets.all(10.0),
+                      confirmTextColor: Colors.white,
+                      onCancel: () {},
+                      onConfirm: () async {
+                       
+                      Future.delayed(Duration(seconds: 3), 
+                      () {
+                        EasyLoading.show(status: "Please wait").then((value) => EasyLoading.dismiss());
+                        Logouthandler();
+                        
+                      },
+                    
+                      );
+                         });
+   
       },
       child: ProfileRow(myicon: Icons.logout, profileText: "Logout")),
 

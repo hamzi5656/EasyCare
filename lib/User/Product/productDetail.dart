@@ -33,7 +33,7 @@ class ProductDetail extends StatelessWidget {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30),
-                      child: Image(height: 400,
+                      child: Image(height: 500,
                         image: NetworkImage("${productDetails["img"]}"),
                       ),
                     ),
@@ -59,6 +59,7 @@ class ProductDetail extends StatelessWidget {
             Column(
               children: [
                 Card(
+                  
                   color: Colors.white,
                   shadowColor: Colors.black,
                   child: Padding(
@@ -67,6 +68,7 @@ class ProductDetail extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // SizedBox(height: 20,),
                         Text(
                           "${productDetails["name"]}",
                           style: const TextStyle(
@@ -120,29 +122,30 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-                Card(color: Colors.white,
-                shadowColor: Colors.black,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Reviews",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          "There will be the Reviews of users that will be against the product.",
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // Card(color: Colors.white,
+                // shadowColor: Colors.black,
+                //   child: Padding(
+                //     padding: const EdgeInsets.all(20),
+                //     child: Column(
+                //       mainAxisAlignment: MainAxisAlignment.start,
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Text(
+                //           "Reviews",
+                //           style: TextStyle(
+                //             fontSize: 18,
+                //             fontWeight: FontWeight.bold,
+                //           ),
+                //         ),
+                //         SizedBox(height: 15),
+                //         Text(
+                //           "There will be the Reviews of users that will be against the product.",
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+          
               ],
             ),
       

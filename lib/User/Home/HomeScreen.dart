@@ -56,8 +56,9 @@
       cartItemCountWidgetBuilder: ((itemCount) =>
       IconButton(onPressed: (){
       Navigator.push(context, MaterialPageRoute(builder: (context)=> 
-      const CartScreen()));
-      }, icon: Badge(
+    CartScreen()));
+      },
+       icon: Badge(
       label: Text(itemCount.toString()),
       child: const Icon(Icons.shopping_bag,color: Colors.white,),
       ))
@@ -76,7 +77,7 @@
       const   SizedBox(height: 10,),
       HomeSlider(),
       const   SizedBox(height: 20,),
-      const  HomeSearchBar(),
+      // const  HomeSearchBar(),
       const   SizedBox(height: 10,),
       const   Align(alignment: Alignment.topLeft,
       child: Text("Categories",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),

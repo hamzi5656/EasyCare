@@ -14,6 +14,8 @@ class Signup extends StatelessWidget {
 TextEditingController _emailController= TextEditingController();
 TextEditingController _passwordController= TextEditingController();
 TextEditingController _nameController= TextEditingController();
+TextEditingController _fathername= TextEditingController();
+TextEditingController _addresscontroller= TextEditingController();
 Signupmethod() async {
   try {
     FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -34,6 +36,9 @@ addDocToFs(String uid){
    FirebaseFirestore.instance.collection("UserDetail").doc(uid).set({
       "Name": _nameController.text,
       "Type":"user",
+      "FatherName": _fathername.text,
+      "Address": _addresscontroller.text,
+      "Email": _emailController.text,
  
       
   
@@ -106,6 +111,36 @@ addDocToFs(String uid){
               SizedBox(
                 height: 20,
               ),
+              Flexible(
+                child: TextField(
+                  controller: _fathername,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Father Name",
+                      hintStyle: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Flexible(
+                child: TextField(
+                  controller: _addresscontroller,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      hintText: "Address",
+                      hintStyle: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
+                ),
+              ),
+              SizedBox(height: 20,),
               Flexible(
                 child: TextField(
                   controller: _passwordController,

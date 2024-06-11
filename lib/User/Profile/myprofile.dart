@@ -35,6 +35,35 @@ class _EditProfileState extends State<EditProfile> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Edit Profile",style: TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,),);
+    return Scaffold(appBar: AppBar(title: Text("Personal Details",
+    style: TextStyle(color: Colors.white),),
+    backgroundColor: Colors.deepPurple,),
+    body: Column(children: [
+
+     
+        SizedBox(height: 20,),
+         Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+        Text("Name"),
+        Text("${userDetails['Name']}")],),
+         SizedBox(height: 20,),
+         Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+        Text("Father Name"),
+        Text("${userDetails['FatherName']}")],),
+         SizedBox(height: 20,),
+         Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+        Text("Email"),
+        Text("${userDetails['Email']}")],),
+         SizedBox(height: 20,),
+         Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+        Text("Address"),
+        Text("${userDetails['Address']}")],)
+
+    ],),
+    
+    );
   }
 }

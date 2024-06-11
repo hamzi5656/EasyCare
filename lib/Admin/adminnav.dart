@@ -1,3 +1,4 @@
+import 'package:auth/Admin/userorders.dart';
 import 'package:auth/Admin/userpopular.dart';
 import 'package:auth/Admin/dashboard.dart';
 import 'package:auth/Admin/adminhome.dart';
@@ -19,10 +20,10 @@ class _HomeNavigatorState extends State<Adminnavigator> {
   List<IconData> navigationIcons = [
    Icons.home,
    Icons.store,
-   Icons.circle,
+   
    Icons.person,
   ];
-  List<String> iconName = ["home", "store", " Favourite", "profile"];
+  List<String> iconName = ["home", "store",  "profile"];
 
   int currentIndex = 0;
 
@@ -36,7 +37,7 @@ class _HomeNavigatorState extends State<Adminnavigator> {
         children:  [ 
        AdminHome(),
        ButtonScreen(),
-        CALL(),
+     
          ProfileScreen(),
 
           ],

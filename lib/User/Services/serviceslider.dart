@@ -1,5 +1,6 @@
 import 'package:auth/User/Home/services.Home.dart';
 import 'package:auth/User/Services/doctor.dart';
+import 'package:auth/User/Services/servicesCategories/gymtrainer.dart';
 import 'package:auth/User/Services/servicesDetail.dart';
 import 'package:auth/User/Services/serviceslist.dart';
 import 'package:flutter/material.dart';
@@ -52,10 +53,10 @@ class ServicesSliderHome extends StatelessWidget {
          
             InkWell(
               onTap: () {
-       Navigator.push(context, MaterialPageRoute(builder: (context)=> DoctorService()));
+       Navigator.push(context, MaterialPageRoute(builder: (context)=>   GymTrainer()));
            
     },
-              child: serviceviewCard(context, "asset/images/2.jpg", "Suregon", "12992", "30 min", "Dr Seemab", (){})),
+              child: serviceviewCard(context, "asset/images/gym.jpg", "Gym Trainner", "12992", "30 min", "Abdullah Meer", (){})),
            
           ],),
         ),

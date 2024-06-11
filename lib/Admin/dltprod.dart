@@ -72,6 +72,7 @@ class _dltprodState extends State<dltprod> {
                             .doc(widget.productinf['id'])
                             .delete().then((value) => EasyLoading.showSuccess("Product Deleted"));
                       });
+   
     }, icon: Icon(Icons.delete))
            ],),
      ),);
