@@ -79,31 +79,31 @@ class CartScreen extends StatelessWidget {
       ],) ,);
       
     },
-    showEmptyCartMsgWidget: const Text("No data")),
+    showEmptyCartMsgWidget: Center(child: const Text("No data"))),
  
  ),
- Expanded(
-  flex: 1,
+//  Expanded(
+//   flex: 1,
   
-  child: Column(children: [
-                            MaterialButton(
-                color: Colors.deepPurple,
-                child: const Text("Attach File",
-                    style: TextStyle(color: Colors.white)),
-                onPressed: () async {
-                  takeSnapshot();
-                }),
-                Container(child:
-                _imgFile  != null?
-                 Image.file(_imgFile! ,height: 200,width: double.infinity,):
-                  const 
-                  Text(
-                    "img",
+//   child: Column(children: [
+//                             MaterialButton(
+//                 color: Colors.deepPurple,
+//                 child: const Text("Attach File",
+//                     style: TextStyle(color: Colors.white)),
+//                 onPressed: () async {
+//                   takeSnapshot();
+//                 }),
+//                 Container(child:
+//                 _imgFile  != null?
+//                  Image.file(_imgFile! ,height: 200,width: double.infinity,):
+//                   const 
+//                   Text(
+//                     "img",
 
-                    ),
+//                     ),
                  
-                 ),
- ],),),
+//                  ),
+//  ],),),
  
 Expanded(flex: 1,
   child:  
@@ -115,12 +115,15 @@ Expanded(flex: 1,
   }) )
 
       ],),
-      bottomSheet: Container(height: 70,width: double.infinity,
+      bottomSheet:
+       Container(height: 70,width: double.infinity,
          color:Colors.deepPurple,child: Center(child: InkWell(onTap: ()
          {
   
          Navigator.push(context, MaterialPageRoute(builder: (context)=>  ProductBooking()));
          },
           child: const Text("Check out",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),))),),);
+ 
+ 
   }
 }

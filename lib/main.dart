@@ -1,6 +1,8 @@
 
 import 'package:auth/Authentication/userlogin.dart';
+import 'package:auth/example.dart';
 import 'package:auth/firebase_options.dart';
+import 'package:auth/getpayment.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -27,9 +29,10 @@ class MainApp extends StatelessWidget {
      debugShowCheckedModeBanner: false,
      builder: EasyLoading.init(),
       home: 
-      //AdminHome()
+    // Example(),
+    // Payment()
      Login(),
-   //HomeNavigator()
+
     );
   }
 }

@@ -5,12 +5,9 @@ class HomeSlider extends StatelessWidget {
 final List<String> images = [
 
     'https://d3i71xaburhd42.cloudfront.net/0203de1892205aaccc3c638c9d496beee1f8c151/5-Figure4-1.png',
-      'https://d3i71xaburhd42.cloudfront.net/0203de1892205aaccc3c638c9d496beee1f8c151/5-Figure4-1.png',
-    
-      'https://d3i71xaburhd42.cloudfront.net/0203de1892205aaccc3c638c9d496beee1f8c151/5-Figure4-1.png',
-    
-    // 'https://www.consilium.europa.eu/media/67980/thumb.png',
-    // 'https://centaur-wp.s3.eu-central-1.amazonaws.com/designweek/prod/content/uploads/2019/03/18111417/thisables-edit.jpg',
+
+     'https://www.consilium.europa.eu/media/67980/thumb.png',
+     'https://centaur-wp.s3.eu-central-1.amazonaws.com/designweek/prod/content/uploads/2019/03/18111417/thisables-edit.jpg',
   
   ];
   @override

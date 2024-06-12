@@ -26,12 +26,7 @@ class _LoginState extends State<Login> {
               MaterialPageRoute(builder: ((context) => HomeNavigator())));
           break;
         }
-        //       case "":
-        // {
-        //   Navigator.of(context).push(
-        //       MaterialPageRoute(builder: ((context) => HomeNavigator())));
-        //   break;
-        // }
+       
 
       case "Admin":
         {
@@ -111,42 +106,38 @@ TextEditingController emailController = TextEditingController();
                 height: 10,
               ),
               SizedBox(height: 40,),
-              Flexible(
-                child: SizedBox(
-                  height: 50,
-                  child: TextField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.circular(1),
-                        ),
-                        hintText: "Email",
-                        hintStyle: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.grey)),
-                  ),
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(1),
+                      ),
+                      hintText: "Email",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
               SizedBox(
                 height: 20,
               ),
-              Flexible(
-                child: SizedBox(
-                  height: 50,
-                  child: TextField(
-                    controller: passwordController,
-                    
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
-                          borderRadius: BorderRadius.circular(1),
-                        ),
-                        hintText: "Password",
-                        hintStyle: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.grey)),
-                  ),
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: passwordController,
+                  
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.circular(1),
+                      ),
+                      hintText: "Password",
+                      hintStyle: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.grey)),
                 ),
               ),
               SizedBox(

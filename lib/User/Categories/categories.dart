@@ -6,7 +6,9 @@ import 'package:auth/User/Categories/Mobility.dart';
 import 'package:auth/User/Categories/sticks.dart';
 import 'package:auth/User/Categories/visualAids.dart';
 import 'package:auth/User/Home/popularCategories.dart';
+import 'package:auth/User/cart/CartScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 class ProductCategories extends StatelessWidget {
   const ProductCategories({super.key});
 
@@ -15,7 +17,21 @@ class ProductCategories extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: 
     const Text("Categories",style: TextStyle(color: Colors.white),),
-    backgroundColor: Colors.deepPurple,),
+    backgroundColor: Colors.deepPurple,
+    actions: [  PersistentShoppingCart().showCartItemCountWidget(
+      cartItemCountWidgetBuilder: ((itemCount) =>
+      IconButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> 
+    CartScreen()));
+      },
+       icon: Badge(
+      label: Text(itemCount.toString()),
+      child: const Icon(Icons.shopping_bag,color: Colors.white,),
+      ))
+      ))
+    
+    ],
+    ),
    body: Padding(
    padding: const EdgeInsets.all(10.10),
    child: Column(children: [

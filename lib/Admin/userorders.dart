@@ -23,7 +23,7 @@ class _UserOrdersState extends State<UserOrders> {
         .then((response) {
       List temp = [];
       for (var doc in response.docs) {
-        temp.add(doc.data());
+        temp.add({...doc.data(),"orderId":doc.id});
         //  print(doc.data());
       }
       print("temp");
@@ -48,7 +48,8 @@ class _UserOrdersState extends State<UserOrders> {
       body: Column(children: [
         ...allorders.map((data) =>
 
-            Userorderdata(userdata: data))
+            Userorderdata(userdata: data, )
+            )
       ]),
     );
   }

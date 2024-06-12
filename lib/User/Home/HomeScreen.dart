@@ -52,6 +52,7 @@
       appBar: AppBar(title:const  Text("EasyCare",
       style:TextStyle(color: Colors.white),),backgroundColor: Colors.deepPurple,
       actions: [
+
       PersistentShoppingCart().showCartItemCountWidget(
       cartItemCountWidgetBuilder: ((itemCount) =>
       IconButton(onPressed: (){
@@ -63,6 +64,7 @@
       child: const Icon(Icons.shopping_bag,color: Colors.white,),
       ))
       ))
+    
       ],
       ),
       body: 
