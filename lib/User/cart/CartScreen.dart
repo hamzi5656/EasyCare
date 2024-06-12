@@ -117,7 +117,8 @@ Expanded(flex: 1,
       ],),
       bottomSheet:
        Container(height: 70,width: double.infinity,
-         color:Colors.deepPurple,child: Center(child: InkWell(onTap: ()
+         color:Colors.deepPurple,
+         child: Center(child: InkWell(onTap: ()
          {
   
          Navigator.push(context, MaterialPageRoute(builder: (context)=>  ProductBooking()));
